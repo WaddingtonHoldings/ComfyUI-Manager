@@ -16,6 +16,7 @@ import json
 import time
 import yaml
 import zipfile
+from git import GitCommandError
 
 glob_path = os.path.join(os.path.dirname(__file__))  # ComfyUI-Manager/glob
 sys.path.append(glob_path)
@@ -527,7 +528,7 @@ def is_valid_url(url):
     return False
 
 
-def gitclone_install(files, instant_execution=False, msg_prefix=''):
+def gitclone_install(files, instant_execution=False, msg_prefix='', retries=3):
     print(f"{msg_prefix}Install: {files}")
     for url in files:
         if not is_valid_url(url):
@@ -536,27 +537,39 @@ def gitclone_install(files, instant_execution=False, msg_prefix=''):
 
         if url.endswith("/"):
             url = url[:-1]
-        try:
-            print(f"Download: git clone '{url}'")
-            repo_name = os.path.splitext(os.path.basename(url))[0]
-            repo_path = os.path.join(custom_nodes_path, repo_name)
 
-            # Clone the repository from the remote URL
-            if not instant_execution and platform.system() == 'Windows':
-                res = manager_funcs.run_script([sys.executable, git_script_path, "--clone", custom_nodes_path, url], cwd=custom_nodes_path)
-                if res != 0:
+        attempt = 0
+        while attempt < retries:
+            try:
+                print(f"Download: git clone '{url}'")
+                repo_name = os.path.splitext(os.path.basename(url))[0]
+                repo_path = os.path.join(custom_nodes_path, repo_name)
+
+                # Clone the repository from the remote URL
+                if not instant_execution and platform.system() == 'Windows':
+                    res = manager_funcs.run_script([sys.executable, git_script_path, "--clone", custom_nodes_path, url], cwd=custom_nodes_path)
+                    if res != 0:
+                        return False
+                else:
+                    repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
+                    repo.git.clear_cache()
+                    repo.close()
+
+                if not execute_install_script(url, repo_path, instant_execution=instant_execution):
                     return False
-            else:
-                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
-                repo.git.clear_cache()
-                repo.close()
 
-            if not execute_install_script(url, repo_path, instant_execution=instant_execution):
+                break  # Exit the retry loop if cloning is successful
+            except GitCommandError as e:
+                print(f"Install(git-clone) error: {url} / {e}", file=sys.stderr)
+                attempt += 1
+                if attempt < retries:
+                    print(f"Retrying... ({attempt}/{retries})")
+                else:
+                    print(f"Failed after {retries} attempts.")
+                    return False
+            except Exception as e:
+                print(f"Install(git-clone) error: {url} / {e}", file=sys.stderr)
                 return False
-
-        except Exception as e:
-            print(f"Install(git-clone) error: {url} / {e}", file=sys.stderr)
-            return False
 
     print("Installation was successful.")
     return True
