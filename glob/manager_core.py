@@ -547,7 +547,7 @@ def gitclone_install(files, instant_execution=False, msg_prefix=''):
                 if res != 0:
                     return False
             else:
-                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress())
+                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
                 repo.git.clear_cache()
                 repo.close()
 
