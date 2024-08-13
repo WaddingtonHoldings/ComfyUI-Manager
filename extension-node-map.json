@@ -9,15 +9,6 @@
             "title_aux": "alkemann nodes"
         }
     ],
-    "https://git.mmaker.moe/mmaker/sd-webui-color-enhance": [
-        [
-            "MMakerColorBlend",
-            "MMakerColorEnhance"
-        ],
-        {
-            "title_aux": "Color Enhance"
-        }
-    ],
     "https://github.com/0xbitches/ComfyUI-LCM": [
         [
             "LCM_Sampler",
@@ -37,14 +28,6 @@
             "title_aux": "ComfyUI-GPT2P"
         }
     ],
-    "https://github.com/1038lab/ComfyUI_LatentSizeSelector": [
-        [
-            "LatentSizeSelector"
-        ],
-        {
-            "title_aux": "ComfyUI-latentSizeSelector"
-        }
-    ],
     "https://github.com/11dogzi/ComfUI-EGAdapterMadAssistant": [
         [
             "EGIPAdapter_Mad_Assistant",
@@ -52,7 +35,8 @@
             "EGIPAdapter_Mad_AssistantV2",
             "EGIPAdapter_Mad_AssistantV3",
             "EGIPAdapter_Mad_AssistantV4",
-            "EGIPAdapter_Mad_AssistantV5"
+            "EGIPAdapter_Mad_AssistantV5",
+            "EGIPAdapter_Mad_AssistantV6"
         ],
         {
             "title_aux": "ComfUI-EGAdapterMadAssistant"
@@ -110,6 +94,21 @@
         ],
         {
             "title_aux": "Comfyui-ergouzi-Nodes"
+        }
+    ],
+    "https://github.com/11dogzi/Comfyui-ergouzi-kaiguan": [
+        [
+            "ALLty",
+            "EGRYDZQHNode",
+            "GroupSwitchNode",
+            "GroupSwitchNodee",
+            "GroupSwitchNodeee",
+            "GroupSwitchNodeeee",
+            "hulue",
+            "jinyong"
+        ],
+        {
+            "title_aux": "Comfyui-ergouzi-kaiguan"
         }
     ],
     "https://github.com/11dogzi/Comfyui-ergouzi-samplers": [
@@ -246,6 +245,8 @@
             "cam-pos-bus",
             "mesh_data_bus",
             "mesh_remap_cubvh",
+            "ply_load",
+            "ply_normalize",
             "show_any",
             "string-to-array",
             "vc_to_texture"
@@ -291,6 +292,15 @@
         ],
         {
             "title_aux": "Image-vector-for-ComfyUI"
+        }
+    ],
+    "https://github.com/AIFSH/AniTalker-ComfyUI": [
+        [
+            "AniTalkerNode",
+            "PreViewVideo"
+        ],
+        {
+            "title_aux": "AniTalker-ComfyUI"
         }
     ],
     "https://github.com/AIFSH/ComfyUI-3d-photo-inpainting": [
@@ -513,6 +523,17 @@
             "title_aux": "CosyVoice-ComfyUI"
         }
     ],
+    "https://github.com/AIFSH/DHLive-ComfyUI": [
+        [
+            "DHLiveNode",
+            "LoadVideo",
+            "PreViewVideo",
+            "StaticVideo"
+        ],
+        {
+            "title_aux": "DHLive-ComfyUI"
+        }
+    ],
     "https://github.com/AIFSH/DiffMorpher-ComfyUI": [
         [
             "DiffMorpherNode",
@@ -523,6 +544,22 @@
             "title_aux": "DiffMorpher-ComfyUI"
         }
     ],
+    "https://github.com/AIFSH/GSTTS-ComfyUI": [
+        [
+            "ASRNode",
+            "AudioSlicerNode",
+            "ConfigGPTNode",
+            "ConfigSoVITSNode",
+            "DatasetNode",
+            "ExperienceNode",
+            "GSFinetuneNone",
+            "GSVTTSNode",
+            "TextDictNode"
+        ],
+        {
+            "title_aux": "GSTTS-ComfyUI"
+        }
+    ],
     "https://github.com/AIFSH/SenseVoice-ComfyUI": [
         [
             "SenseVoiceNode",
@@ -530,6 +567,15 @@
         ],
         {
             "title_aux": "SenseVoice-ComfyUI"
+        }
+    ],
+    "https://github.com/AIFSH/StyleShot-ComfyUI": [
+        [
+            "StyleShotNode",
+            "TextNode"
+        ],
+        {
+            "title_aux": "StyleShot-ComfyUI"
         }
     ],
     "https://github.com/AIFSH/VocalSeparation-ComfyUI": [
@@ -650,7 +696,7 @@
             "CleanFileNameNode"
         ],
         {
-            "title_aux": "APZmedia Clean File Name Node"
+            "title_aux": "APZmedia Clean Name"
         }
     ],
     "https://github.com/Aaron-CHM/ComfyUI-z-a1111-sd-webui-DanTagGen": [
@@ -753,7 +799,8 @@
             "ETN_MergeImageTile",
             "ETN_NSFWFilter",
             "ETN_SendImageWebSocket",
-            "ETN_TileLayout"
+            "ETN_TileLayout",
+            "ETN_Translate"
         ],
         {
             "title_aux": "ComfyUI Nodes for External Tooling"
@@ -809,8 +856,20 @@
             "FILTER MASK (JOV) \ud83e\udd3f",
             "FLATTEN (JOV) \u2b07\ufe0f",
             "GLSL (JOV) \ud83c\udf69",
+            "GLSL BLEND LINEAR (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL FILTER RANGE (JOV) \ud83e\uddd9\ud83c\udffd\u200d\u2640\ufe0f",
+            "GLSL GRAYSCALE (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL HSV ADJUST (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL HSV-2-LAB (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL HSV-2-RGB (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL LAB-2-HSV (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL LAB-2-RGB (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL NORMAL (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL RGB-2-HSV (JOV) \ud83e\uddd9\ud83c\udffd",
+            "GLSL RGB-2-LAB (JOV) \ud83e\uddd9\ud83c\udffd",
             "GRADIENT MAP (JOV) \ud83c\uddf2\ud83c\uddfa",
             "GRAPH (JOV) \ud83d\udcc8",
+            "IMAGE INFO (JOV) \ud83d\udcda",
             "LERP (JOV) \ud83d\udd30",
             "MIDI FILTER (JOV) \u2733\ufe0f",
             "MIDI FILTER EZ (JOV) \u2747\ufe0f",
@@ -846,6 +905,16 @@
             "nodename_pattern": " \\(JOV\\)$",
             "title": "Jovimetrix",
             "title_aux": "Jovimetrix Composition Nodes"
+        }
+    ],
+    "https://github.com/Anibaaal/ComfyUI-UX-Nodes": [
+        [
+            "DenoiseCalculator",
+            "EasyResolutionPicker",
+            "StepCalculator"
+        ],
+        {
+            "title_aux": "ComfyUI UX Nodes"
         }
     ],
     "https://github.com/AonekoSS/ComfyUI-LoRA-Tuner": [
@@ -1151,6 +1220,7 @@
             "ComfyUIDeployExternalNumberInt",
             "ComfyUIDeployExternalNumberSlider",
             "ComfyUIDeployExternalText",
+            "ComfyUIDeployExternalTextList",
             "ComfyUIDeployExternalVid",
             "ComfyUIDeployExternalVideo"
         ],
@@ -1164,10 +1234,22 @@
     ],
     "https://github.com/BetaDoggo/ComfyUI-VideoPlayer": [
         [
-            "LoadFrame"
+            "AllInOnePlayer",
+            "ImageToEmoji",
+            "LoadFrame",
+            "LoadJPGFrame",
+            "LoadVideoFrame"
         ],
         {
             "title_aux": "ComfyUI Video Player"
+        }
+    ],
+    "https://github.com/BetaDoggo/ComfyUI-WDV-Nodes": [
+        [
+            "ModelSamplingWaifuDiffusionV"
+        ],
+        {
+            "title_aux": "neggles/ComfyUI-WDV-Nodes [gist-wrapper]"
         }
     ],
     "https://github.com/BetaDoggo/ComfyUI-YetAnotherSafetyChecker": [
@@ -1483,6 +1565,18 @@
             "title_aux": "Primere nodes for ComfyUI"
         }
     ],
+    "https://github.com/Cyber-Blacat/ComfyUI-Yuan": [
+        [
+            "Image Judgment",
+            "ImageMinusMask",
+            "Yuan",
+            "Yuan Transfer",
+            "YuanBW"
+        ],
+        {
+            "title_aux": "ComfyUI-Yuan"
+        }
+    ],
     "https://github.com/Cyberschorsch/ComfyUI-checkpoint-config-loader": [
         [
             "Checkpoint Loader Config"
@@ -1551,6 +1645,15 @@
             "title_aux": "Derfuu_ComfyUI_ModdedNodes"
         }
     ],
+    "https://github.com/Dobidop/ComfyStereo": [
+        [
+            "LazyStereo",
+            "StereoImageNode"
+        ],
+        {
+            "title_aux": "Dobidop ComfyStereo"
+        }
+    ],
     "https://github.com/DonBaronFactory/ComfyUI-Cre8it-Nodes": [
         [
             "ApplySerialPrompter",
@@ -1612,6 +1715,14 @@
         ],
         {
             "title_aux": "ComfyUI-post-processing-nodes"
+        }
+    ],
+    "https://github.com/EnragedAntelope/ComfyUI-Doubutsu-Describer": [
+        [
+            "DoubutsuDescriber"
+        ],
+        {
+            "title_aux": "ComfyUI-Doubutsu-Describer"
         }
     ],
     "https://github.com/Excidos/ComfyUI-Documents": [
@@ -1692,6 +1803,17 @@
             "title_aux": "LoadLoraWithTags"
         }
     ],
+    "https://github.com/Extraltodeus/Skimmed_CFG": [
+        [
+            "Skimmed CFG",
+            "Skimmed CFG - linear interpolation",
+            "Skimmed CFG - linear interpolation dual scales",
+            "Skimmed CFG - replace"
+        ],
+        {
+            "title_aux": "Skimmed_CFG"
+        }
+    ],
     "https://github.com/Extraltodeus/Stable-Diffusion-temperature-settings": [
         [
             "CLIP Temperature",
@@ -1726,35 +1848,11 @@
     ],
     "https://github.com/Extraltodeus/noise_latent_perlinpinpin": [
         [
-            "NoisyLatentPerlin"
+            "NoisyLatentPerlin",
+            "NoisyLatentPerlin16ch"
         ],
         {
             "title_aux": "noise latent perlinpinpin"
-        }
-    ],
-    "https://github.com/Extraltodeus/pre_cfg_comfy_nodes_for_ComfyUI": [
-        [
-            "Conditioning set timestep from sigma",
-            "Individual channel selector",
-            "Post CFG make a dot",
-            "Post CFG subtract mean",
-            "Pre CFG PAG",
-            "Pre CFG automatic scale",
-            "Pre CFG channel multiplier",
-            "Pre CFG color control",
-            "Pre CFG consensus sharpening",
-            "Pre CFG exponentiation",
-            "Pre CFG perp-neg",
-            "Pre CFG sharpening",
-            "Pre CFG subtract mean",
-            "Pre CFG uncond zero",
-            "Pre CFG variable scaling",
-            "Pre CFG zero attention",
-            "Shape attention",
-            "Support empty uncond"
-        ],
-        {
-            "title_aux": "pre_cfg_comfy_nodes_for_ComfyUI"
         }
     ],
     "https://github.com/Extraltodeus/sigmas_tools_and_the_golden_scheduler": [
@@ -2188,6 +2286,14 @@
             "title_aux": "ComfyUI-Mana-Nodes"
         }
     ],
+    "https://github.com/Franck-Demongin/NX_HuggingFace_Flux": [
+        [
+            "HFFlux"
+        ],
+        {
+            "title_aux": "NX_HuggingFace_Flux"
+        }
+    ],
     "https://github.com/Franck-Demongin/NX_PromptStyler": [
         [
             "NX_PromptStyler"
@@ -2196,20 +2302,70 @@
             "title_aux": "NX_PromptStyler"
         }
     ],
+    "https://github.com/Franck-Demongin/NX_Translator": [
+        [
+            "Nx_Translator"
+        ],
+        {
+            "title_aux": "NX_Translator"
+        }
+    ],
+    "https://github.com/FuouM/ComfyUI-EbSynth": [
+        [
+            "ES_Guides7",
+            "ES_Translate",
+            "ES_VideoTransfer",
+            "ES_VideoTransferExtra"
+        ],
+        {
+            "author": "Fuou Marinas",
+            "description": "Run EbSynth in ComfyUI.",
+            "nickname": "EbSynth",
+            "title": "ComfyUI-EbSynth",
+            "title_aux": "ComfyUI-EbSynth"
+        }
+    ],
     "https://github.com/FuouM/ComfyUI-FirstOrderMM": [
         [
+            "Articulate_Runner",
             "FOMM_Partswap",
             "FOMM_Runner",
             "FOMM_Seg10Chooser",
             "FOMM_Seg15Chooser",
-            "FOMM_Seg5Chooser"
+            "FOMM_Seg5Chooser",
+            "FSRT_Runner",
+            "MRFA_Runner",
+            "Spline_Runner"
         ],
         {
             "author": "Fuou Marinas",
-            "description": "Run First Order Motion Model for Image Animation in ComfyUI.",
+            "description": "ComfyUI-native nodes to run First Order Motion Model for Image Animation and its non-diffusion-based successors.",
             "nickname": "FOMM",
             "title": "ComfyUI-FirstOrderMM",
             "title_aux": "ComfyUI-FirstOrderMM"
+        }
+    ],
+    "https://github.com/FuouM/FM_nodes": [
+        [
+            "CoLIE_LowLight_Enhance",
+            "ConvIR_DeHaze",
+            "ConvIR_DeRain",
+            "ConvIR_DeSnow",
+            "ConvIR_DefocusDeblur",
+            "ConvIR_MotionDeBlur",
+            "ProPIH_Harmonizer",
+            "RealViFormerSR",
+            "StabStitch",
+            "StabStitch_Crop_Resize",
+            "StabStitch_Stabilize",
+            "WFEN"
+        ],
+        {
+            "author": "Fuou Marinas",
+            "description": "A collection of nodes.",
+            "nickname": "FM_nodes",
+            "title": "FM Nodes",
+            "title_aux": "FM_nodes"
         }
     ],
     "https://github.com/G-370/ComfyUI-SD3-Powerlab": [
@@ -2265,6 +2421,14 @@
         ],
         {
             "title_aux": "ComfyUI-SD3LatentSelectRes"
+        }
+    ],
+    "https://github.com/GeekyGhost/ComfyUI-GeekyRemB": [
+        [
+            "GeekyRemB"
+        ],
+        {
+            "title_aux": "ComfyUI-GeekyRemB"
         }
     ],
     "https://github.com/GentlemanHu/ComfyUI-SunoAI": [
@@ -2416,7 +2580,7 @@
             "Recenter XL"
         ],
         {
-            "title_aux": "ComfyUI Diffusion Color Grading"
+            "title_aux": "Diffusion CG"
         }
     ],
     "https://github.com/Haoming02/comfyui-floodgate": [
@@ -2424,7 +2588,7 @@
             "FloodGate"
         ],
         {
-            "title_aux": "ComfyUI Floodgate"
+            "title_aux": "Floodgate"
         }
     ],
     "https://github.com/Haoming02/comfyui-resharpen": [
@@ -2449,6 +2613,15 @@
         ],
         {
             "title_aux": "comfyui-enhanced-save-node"
+        }
+    ],
+    "https://github.com/Hellrunner2k/ComfyUI-HellrunnersMagicalNodes": [
+        [
+            "MagicalSaveNode",
+            "ThermalLatenator"
+        ],
+        {
+            "title_aux": "Hellrunner's Magical Nodes"
         }
     ],
     "https://github.com/Hiero207/ComfyUI-Hiero-Nodes": [
@@ -2560,6 +2733,17 @@
         ],
         {
             "title_aux": "ComfyUI-Stereopsis"
+        }
+    ],
+    "https://github.com/IuvenisSapiens/ComfyUI_MiniCPM-V-2_6-int4": [
+        [
+            "DisplayText",
+            "LoadVideo",
+            "MiniCPM_VQA",
+            "PreViewVideo"
+        ],
+        {
+            "title_aux": "ComfyUI_MiniCPM-V-2_6-int4"
         }
     ],
     "https://github.com/JPS-GER/ComfyUI_JPS-Nodes": [
@@ -2685,6 +2869,7 @@
             "JNodes_BooleanSelectorWithString",
             "JNodes_BreakMediaInfo",
             "JNodes_CheckpointSelectorWithString",
+            "JNodes_ConditioningInOut",
             "JNodes_CreateStereoscopicImageFromDepth",
             "JNodes_FloatLiteral",
             "JNodes_GetComfyDirectory",
@@ -2700,6 +2885,7 @@
             "JNodes_LoadVisualMediaFromPath_Batch",
             "JNodes_LoraExtractor",
             "JNodes_MediaInfoToString",
+            "JNodes_ModelInOut",
             "JNodes_OutVideoInfo",
             "JNodes_ParseDynamicPrompts",
             "JNodes_ParseParametersToGlobalList",
@@ -2716,11 +2902,11 @@
             "JNodes_SearchAndReplaceFromFile",
             "JNodes_SearchAndReplaceFromList",
             "JNodes_SelectRandomFileFromDirectory",
-            "JNodes_SetMetadataA1111",
             "JNodes_SetNegativePromptInMetaData",
             "JNodes_SetPositivePromptInMetaData",
             "JNodes_SplitAndJoin",
             "JNodes_StringLiteral",
+            "JNodes_SubdirectorySelector",
             "JNodes_SyncedStringLiteral",
             "JNodes_TokenCounter",
             "JNodes_TrimAndStrip",
@@ -2734,9 +2920,11 @@
     ],
     "https://github.com/JayLyu/ComfyUI_BaiKong_Node": [
         [
+            "BK_ColorContrast",
             "BK_ColorLimit",
             "BK_ColorSelector",
             "BK_GradientImage",
+            "BK_ImageFilterByAspectRatio",
             "BK_Img2Color"
         ],
         {
@@ -2812,6 +3000,30 @@
         ],
         {
             "title_aux": "comfy-plasma"
+        }
+    ],
+    "https://github.com/JosefKuchar/ComfyUI-AdvancedTiling": [
+        [
+            "AdvancedTiling",
+            "AdvancedTilingSettings",
+            "AdvancedTilingVAEDecode"
+        ],
+        {
+            "title_aux": "ComfyUI-AdvancedTiling"
+        }
+    ],
+    "https://github.com/Julian-adv/WildDivide": [
+        [
+            "Attention couple",
+            "Comfy Divide",
+            "WildcardEncode"
+        ],
+        {
+            "author": "Julian Adventurer.",
+            "description": "This node is used to encode a wildcard string.",
+            "nickname": "WildDivide",
+            "title": "Wild Divide",
+            "title_aux": "Wild Divide"
         }
     ],
     "https://github.com/Kangkang625/ComfyUI-paint-by-example": [
@@ -2937,6 +3149,20 @@
             "ADE_ConditioningSetMask",
             "ADE_ConditioningSetMaskAndCombine",
             "ADE_ConditioningSetUnmaskedAndCombine",
+            "ADE_ContextExtras_ContextRef",
+            "ADE_ContextExtras_ContextRef_Keyframe",
+            "ADE_ContextExtras_ContextRef_KeyframeFromList",
+            "ADE_ContextExtras_ContextRef_KeyframeInterpolation",
+            "ADE_ContextExtras_ContextRef_ModeFirst",
+            "ADE_ContextExtras_ContextRef_ModeIndexes",
+            "ADE_ContextExtras_ContextRef_ModeSliding",
+            "ADE_ContextExtras_ContextRef_TuneAttn",
+            "ADE_ContextExtras_ContextRef_TuneAttnAdain",
+            "ADE_ContextExtras_NaiveReuse",
+            "ADE_ContextExtras_NaiveReuse_Keyframe",
+            "ADE_ContextExtras_NaiveReuse_KeyframeFromList",
+            "ADE_ContextExtras_NaiveReuse_KeyframeInterpolation",
+            "ADE_ContextExtras_Set",
             "ADE_CustomCFG",
             "ADE_CustomCFGKeyframe",
             "ADE_CustomCFGKeyframeFromList",
@@ -3154,6 +3380,15 @@
             "title_aux": "ComfyUI-Diffusers"
         }
     ],
+    "https://github.com/Ling-APE/ComfyUI-PixelResolutionCalculator": [
+        [
+            "LatentSizeToPixelSize",
+            "PixelResolutionCalculator"
+        ],
+        {
+            "title_aux": "ComfyUI-PixelResolutionCalculator"
+        }
+    ],
     "https://github.com/Loewen-Hob/rembg-comfyui-node-better": [
         [
             "Image Remove Background (rembg)"
@@ -3305,6 +3540,15 @@
             "title_aux": "ComfyUI-promptLAB"
         }
     ],
+    "https://github.com/MakkiShizu/comfyui_reimgsize": [
+        [
+            "Cropimg",
+            "Resize"
+        ],
+        {
+            "title_aux": "comfyui_reimgsize"
+        }
+    ],
     "https://github.com/Mamaaaamooooo/batchImg-rembg-ComfyUI-nodes": [
         [
             "Image Remove Background (rembg)"
@@ -3415,6 +3659,33 @@
             "title_aux": "Mosaica"
         }
     ],
+    "https://github.com/MiddleKD/ComfyUI-mem-safe-wrapper": [
+        [
+            "MakeModelMemorySafe-safewrapper",
+            "ResetModelPatcher-safewrapper",
+            "SimpleDummyModel-safewrapper",
+            "SimpleDummyRun-safewrapper"
+        ],
+        {
+            "title_aux": "ComfyUI-mem-safe-wrapper"
+        }
+    ],
+    "https://github.com/MiddleKD/ComfyUI-productfix": [
+        [
+            "ApplyLatentInjection",
+            "DetailTransferAdd",
+            "DetailTransferLatentAdd",
+            "DynamicImageResize",
+            "GetTextMask",
+            "ResetModelPatcherCalculateWeight",
+            "VQDecoder",
+            "VQEncoder",
+            "VQLoader"
+        ],
+        {
+            "title_aux": "ComfyUI-productfix"
+        }
+    ],
     "https://github.com/MilitantHitchhiker/MilitantHitchhiker-SwitchbladePack": [
         [
             "IntegratedRandomPromptGenerator",
@@ -3428,45 +3699,12 @@
             "title_aux": "Militant Hitchhiker's Switchblade Pack"
         }
     ],
-    "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ": [
+    "https://github.com/Mintbeer96/ComfyUI-KerasOCR": [
         [
-            "IPAAdapterFaceIDBatch",
-            "IPAdapter",
-            "IPAdapterAdvanced",
-            "IPAdapterBatch",
-            "IPAdapterCombineEmbeds",
-            "IPAdapterCombineParams",
-            "IPAdapterCombineWeights",
-            "IPAdapterEmbeds",
-            "IPAdapterEmbedsBatch",
-            "IPAdapterEncoder",
-            "IPAdapterFaceID",
-            "IPAdapterFromParams",
-            "IPAdapterInsightFaceLoader",
-            "IPAdapterLoadEmbeds",
-            "IPAdapterMS",
-            "IPAdapterModelLoader",
-            "IPAdapterNoise",
-            "IPAdapterPreciseComposition",
-            "IPAdapterPreciseCompositionBatch",
-            "IPAdapterPreciseStyleTransfer",
-            "IPAdapterPreciseStyleTransferBatch",
-            "IPAdapterPromptScheduleFromWeightsStrategy",
-            "IPAdapterRegionalConditioning",
-            "IPAdapterSaveEmbeds",
-            "IPAdapterStyleComposition",
-            "IPAdapterStyleCompositionBatch",
-            "IPAdapterTiled",
-            "IPAdapterTiledBatch",
-            "IPAdapterUnifiedLoader",
-            "IPAdapterUnifiedLoaderCommunity",
-            "IPAdapterUnifiedLoaderFaceID",
-            "IPAdapterWeights",
-            "IPAdapterWeightsFromStrategy",
-            "PrepImageForClipVision"
+            "KerasOCR"
         ],
         {
-            "title_aux": "ComfyUI-Kolors-MZ"
+            "title_aux": "ComfyUI-KerasOCR"
         }
     ],
     "https://github.com/Miosp/ComfyUI-FBCNN": [
@@ -3486,6 +3724,14 @@
         ],
         {
             "title_aux": "ComfyUI Slothful Attention"
+        }
+    ],
+    "https://github.com/MohammadAboulEla/ComfyUI-iTools": [
+        [
+            "iTools_Prompt"
+        ],
+        {
+            "title_aux": "iTools ImageLoaderPlus"
         }
     ],
     "https://github.com/MokkaBoss1/ComfyUI_Mokkaboss1": [
@@ -3582,12 +3828,23 @@
             "title_aux": "ComfyUI_SSStereoscope"
         }
     ],
-    "https://github.com/Munkyfoot/ComfyUI-TextOverlay": [
+    "https://github.com/MushroomFleet/DJZ-Nodes": [
         [
-            "Text Overlay"
+            "AspectSize",
+            "AspectSizeV2"
         ],
         {
-            "title_aux": "ComfyUI-TextOverlay"
+            "title_aux": "DJZ-Nodes"
+        }
+    ],
+    "https://github.com/MuziekMagie/ComfyUI-Matchering": [
+        [
+            "Matchering",
+            "MatcheringAdvanced",
+            "MatcheringLimiterConfig"
+        ],
+        {
+            "title_aux": "ComfyUI-Matchering"
         }
     ],
     "https://github.com/N3rd00d/ComfyUI-Paint3D-Nodes": [
@@ -3604,6 +3861,43 @@
         ],
         {
             "title_aux": "ComfyUI-Paint3D-Nodes"
+        }
+    ],
+    "https://github.com/NMWave/ComfyUI-Nader-Tagging": [
+        [
+            "Load Text List",
+            "Split Sentences",
+            "Split Tags",
+            "Tag Alternating Combiner",
+            "Tag Duplicate Remover",
+            "Token Counter"
+        ],
+        {
+            "title_aux": "Image Captioning and Tagging Assistor Nodes"
+        }
+    ],
+    "https://github.com/NeuralSamurAI/ComfyUI-Dimensional-Latent-Perlin": [
+        [
+            "NoisyLatentPerlinD"
+        ],
+        {
+            "title_aux": "Dimensional Latent Perlin for ComfyUI"
+        }
+    ],
+    "https://github.com/NeuralSamurAI/ComfyUI-FluxPseudoNegativePrompt": [
+        [
+            "FluxPseudoNegativeNode"
+        ],
+        {
+            "title_aux": "FluxPseudoNegative"
+        }
+    ],
+    "https://github.com/NeuralSamurAI/ComfyUI-PromptJSON": [
+        [
+            "PromptJSON"
+        ],
+        {
+            "title_aux": "PromptJSON Node for ComfyUI"
         }
     ],
     "https://github.com/NeuralSamurAI/Comfyui-Superprompt-Unofficial": [
@@ -3858,6 +4152,14 @@
             "title_aux": "ComfyUI-CSV-Loader"
         }
     ],
+    "https://github.com/Parameshvadivel/ComfyUI-SVGview": [
+        [
+            "SVGPreview"
+        ],
+        {
+            "title_aux": "ComfyUI-SVGview"
+        }
+    ],
     "https://github.com/ParisNeo/lollms_nodes_suite": [
         [
             "Artbot",
@@ -3933,6 +4235,19 @@
             "title_aux": "Cyclist"
         }
     ],
+    "https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait": [
+        [
+            "AdvancedLivePortrait",
+            "ExpData",
+            "ExpressionEditor",
+            "LoadExpData",
+            "PrintExpData:",
+            "SaveExpData"
+        ],
+        {
+            "title_aux": "ComfyUI-AdvancedLivePortrait"
+        }
+    ],
     "https://github.com/QaisMalkawi/ComfyUI-QaisHelper": [
         [
             "Bool Binary Operation",
@@ -3945,6 +4260,14 @@
         ],
         {
             "title_aux": "ComfyUI-Qais-Helper"
+        }
+    ],
+    "https://github.com/Raapys/ComfyUI-LatentGC_Aggressive": [
+        [
+            "LatentGC"
+        ],
+        {
+            "title_aux": "LatentGC Aggressive"
         }
     ],
     "https://github.com/RedRayz/ComfyUI-Danbooru-To-WD": [
@@ -4057,6 +4380,14 @@
             "title_aux": "comfyui_io_helpers"
         }
     ],
+    "https://github.com/SEkINVR/ComfyUI-Animator": [
+        [
+            "Animator"
+        ],
+        {
+            "title_aux": "ComfyUI-Animator"
+        }
+    ],
     "https://github.com/SEkINVR/ComfyUI-SaveAs": [
         [
             "ComfyUISaveAs"
@@ -4139,13 +4470,14 @@
     ],
     "https://github.com/SayanoAI/Comfy-RVC": [
         [
+            "Any2ListNode",
             "AudioBatchValueNode",
             "AudioTranscriptionNode",
             "BatchedTranscriptionEncoderNode",
             "DownloadAudio",
             "ImageRepeatInterleavedNode",
             "LatentRepeatInterleavedNode",
-            "LoadAudio",
+            "List2AnyNode",
             "LoadHubertModel",
             "LoadPitchExtractionParams",
             "LoadRVCModelNode",
@@ -4153,10 +4485,14 @@
             "MergeAudioNode",
             "MergeImageBatches",
             "MergeLatentBatches",
-            "PreviewAudio",
+            "RVC-Studio.LoadAudio",
+            "RVC-Studio.PreviewAudio",
             "RVCNode",
             "SimpleMathNode",
-            "UVR5Node"
+            "SliceNode",
+            "SortImagesNode",
+            "UVR5Node",
+            "ZipNode"
         ],
         {
             "title_aux": "Comfy-RVC"
@@ -4531,6 +4867,7 @@
     ],
     "https://github.com/ShmuelRonen/ComfyUI_wav2lip": [
         [
+            "AudioPath",
             "Wav2Lip"
         ],
         {
@@ -4583,6 +4920,14 @@
         ],
         {
             "title_aux": "comfyui_meme_maker"
+        }
+    ],
+    "https://github.com/SoftMeng/ComfyUI-DeepCache-Fix": [
+        [
+            "DeepCache_Fix"
+        ],
+        {
+            "title_aux": "ComfyUI-DeepCache-Fix"
         }
     ],
     "https://github.com/SoftMeng/ComfyUI_ImageToText": [
@@ -4711,7 +5056,8 @@
     ],
     "https://github.com/StartHua/Comfyui_segformer_b2_clothes": [
         [
-            "segformer_b2_clothes"
+            "segformer_b2_clothes",
+            "segformer_b3_fashion"
         ],
         {
             "title_aux": "comfyui_segformer_b2_clothes"
@@ -4719,12 +5065,12 @@
     ],
     "https://github.com/SuperBeastsAI/ComfyUI-SuperBeasts": [
         [
-            "Deflicker (SuperBeasts.AI)",
+            "Deflicker - Experimental (SuperBeasts.AI)",
             "HDR Effects (SuperBeasts.AI)",
             "Image Batch Manager (SuperBeasts.AI)",
             "Make Resized Mask Batch (SuperBeasts.AI)",
             "Mask Batch Manager (SuperBeasts.AI)",
-            "Pixel Deflicker (SuperBeasts.AI)",
+            "Pixel Deflicker - Experimental (SuperBeasts.AI)",
             "String List Manager (SuperBeasts.AI)"
         ],
         {
@@ -5072,6 +5418,7 @@
             "tri3d-atr-parse",
             "tri3d-atr-parse-batch",
             "tri3d-bgremove-mega",
+            "tri3d-clean_mask",
             "tri3d-clear-memory",
             "tri3d-clipdrop-bgremove-api",
             "tri3d-clipdrop-bgreplace-api",
@@ -5083,6 +5430,7 @@
             "tri3d-extract-parts-batch2",
             "tri3d-extract-parts-mask-batch",
             "tri3d-extract-pascal-parts-batch",
+            "tri3d-extract_pose_part",
             "tri3d-face-recognise",
             "tri3d-flexible_color_extract",
             "tri3d-float-to-image",
@@ -5111,10 +5459,13 @@
             "tri3d-renormalize_array",
             "tri3d-run_AEMatter_inference",
             "tri3d-scaled-paste",
+            "tri3d-scaled-paste_unsafe",
             "tri3d-simple_bg_swap",
             "tri3d-simple_rescale_histogram",
             "tri3d-skin-feathered-padded-mask",
-            "tri3d-swap-pixels"
+            "tri3d-swap-pixels",
+            "tri3d_fill_mask",
+            "tri3d_position_pose_part"
         ],
         {
             "title_aux": "tri3d-comfyui-nodes"
@@ -5437,10 +5788,27 @@
             "TripoAPIDraft",
             "TripoAnimateRetargetNode",
             "TripoAnimateRigNode",
-            "TripoGLBViewer"
+            "TripoGLBViewer",
+            "TripoRefineModel"
         ],
         {
             "title_aux": "Tripo for ComfyUI"
+        }
+    ],
+    "https://github.com/Visionatrix/ComfyUI-Visionatrix": [
+        [
+            "VixUiCheckbox",
+            "VixUiCheckboxLogic",
+            "VixUiList",
+            "VixUiListLogic",
+            "VixUiPrompt",
+            "VixUiRangeFloat",
+            "VixUiRangeInt",
+            "VixUiRangeScaleFloat",
+            "VixUiWorkflowMetadata"
+        ],
+        {
+            "title_aux": "ComfyUI-Visionatrix"
         }
     ],
     "https://github.com/WASasquatch/ASTERR": [
@@ -5527,6 +5895,7 @@
             "Bus Node",
             "CLIP Input Switch",
             "CLIP Vision Input Switch",
+            "CLIPSEG2",
             "CLIPSeg Batch Masking",
             "CLIPSeg Masking",
             "CLIPSeg Model Loader",
@@ -6136,13 +6505,12 @@
             "AmplitudeToGraph",
             "AmplitudeToNumber",
             "AudioToAmplitudeGraph",
+            "AudioToAudioData",
             "AudioToFFTs",
             "BatchAmplitudeSchedule",
             "ClipAmplitude",
             "FloatArrayToGraph",
             "GateNormalizedAmplitude",
-            "LoadAudio",
-            "LoadVHSAudio",
             "NormalizeAmplitude",
             "NormalizedAmplitudeDrivenString",
             "NormalizedAmplitudeToGraph",
@@ -6325,12 +6693,84 @@
             "title_aux": "LiamUtil (single node)"
         }
     ],
+    "https://github.com/ai-shizuka/ComfyUI-tbox": [
+        [
+            "AnimalPosePreprocessor",
+            "ConstrainImageNode",
+            "DWPosePreprocessor",
+            "DWPreprocessor",
+            "DensePosePreprocessor",
+            "ImageLoader",
+            "ImageResize",
+            "ImageSaver",
+            "ImageSize",
+            "ImagesSaver",
+            "MiDaSDepthPreprocessor"
+        ],
+        {
+            "author": "tstandley",
+            "title_aux": "ComfyUI-tbox"
+        }
+    ],
     "https://github.com/aianimation55/ComfyUI-FatLabels": [
         [
             "FatLabels"
         ],
         {
             "title_aux": "Comfy UI FatLabels"
+        }
+    ],
+    "https://github.com/aisabervisionlab/ComfyUI_merge_ASVL": [
+        [
+            "ASVL"
+        ],
+        {
+            "title_aux": "ComfyUI_merge_ASVL"
+        }
+    ],
+    "https://github.com/akatz-ai/ComfyUI-AKatz-Nodes": [
+        [
+            "AK_AnimatedDilationMaskLinear",
+            "AK_AudioreactiveDilationMask",
+            "AK_IPAdapterCustomWeights",
+            "AK_NormalizeMaskImage"
+        ],
+        {
+            "author": "akatz",
+            "description": "Custom node pack for nodes I use in my workflows. Includes Dilation mask nodes for animating subject masks.",
+            "nickname": "Akatz Custom Nodes",
+            "title": "Akatz Custom Nodes",
+            "title_aux": "Akatz Custom Nodes"
+        }
+    ],
+    "https://github.com/akierson/ComfyUI-textnodes": [
+        [
+            "Prompt Truncate",
+            "Tidy Tags"
+        ],
+        {
+            "title_aux": "ComfyUI-textnodes"
+        }
+    ],
+    "https://github.com/akierson/comfyui-colornodes": [
+        [
+            "Color Picker",
+            "Color to Hex",
+            "Color to RGB",
+            "Image Replace Color",
+            "Invert Color"
+        ],
+        {
+            "title_aux": "comfyui-colornodes"
+        }
+    ],
+    "https://github.com/al-swaiti/All-IN-ONE-style": [
+        [
+            "ComfyUIStyler",
+            "menus"
+        ],
+        {
+            "title_aux": "All-IN-ONE-style"
         }
     ],
     "https://github.com/al-swaiti/ComfyUI-CascadeResolutions": [
@@ -6341,8 +6781,23 @@
             "title_aux": "ComfyUI-CascadeResolutions"
         }
     ],
+    "https://github.com/al-swaiti/ComfyUI-OllamaGemini": [
+        [
+            "BRIA_RMBG",
+            "BRIA_RMBG_ModelLoader",
+            "ConvertRasterToVector",
+            "FLUXResolutions",
+            "GeminiOllamaAPI",
+            "SaveSVG",
+            "TextSplitByDelimiter"
+        ],
+        {
+            "title_aux": "GeminiOllama ComfyUI Extension"
+        }
+    ],
     "https://github.com/alanhuang67/ComfyUI-FAI-Node": [
         [
+            "FAIDynamicMask",
             "FAIScaleScheduler",
             "FAI_Voronoi_Generator"
         ],
@@ -6407,6 +6862,15 @@
         ],
         {
             "title_aux": "ComfyUI-Ollama-Describer"
+        }
+    ],
+    "https://github.com/alpertunga-bile/image-caption-comfyui": [
+        [
+            "Image Caption Node",
+            "Insert Prompt Node"
+        ],
+        {
+            "title_aux": "image-caption-comfyui"
         }
     ],
     "https://github.com/alpertunga-bile/prompt-generator-comfyui": [
@@ -6585,7 +7049,8 @@
     ],
     "https://github.com/asagi4/ComfyUI-Adaptive-Guidance": [
         [
-            "AdaptiveGuidance"
+            "AdaptiveGuidance",
+            "PerpNegAdaptiveGuidanceGuider"
         ],
         {
             "title_aux": "Adaptive Guidance for ComfyUI"
@@ -6756,6 +7221,52 @@
             "title_aux": "ComfyUI-FrameSkipping"
         }
     ],
+    "https://github.com/bananasss00/ComfyUI-SP-Nodes": [
+        [
+            "BoolSwitchOutStr",
+            "CivitaiPrompts",
+            "FaceScatter",
+            "FaceScatter2",
+            "GodnessMerger_Apply",
+            "GodnessMerger_InputBlocks",
+            "GodnessMerger_InputBlocksExperimental",
+            "GodnessMerger_LabelEmb",
+            "GodnessMerger_MiddleBlock",
+            "GodnessMerger_MiddleBlockExperimental",
+            "GodnessMerger_NoiseInjection",
+            "GodnessMerger_Out",
+            "GodnessMerger_OutputBlocks",
+            "GodnessMerger_OutputBlocksExperimental",
+            "GodnessMerger_RAW_Apply",
+            "GodnessMerger_TimeEmbed",
+            "ImageMonitor",
+            "ImgMetaValueExtractor",
+            "LoraLoaderByPath",
+            "LoraLoaderOnlyModelByPath",
+            "PreviewImageWEBP",
+            "PromptChecker",
+            "RandomPromptFromBook",
+            "Random_Model_Merge",
+            "SD3BlocksMultiply",
+            "SD3Multiply",
+            "SP-CheckpointSave",
+            "SP_KoboldCpp",
+            "SP_WebsocketSendImage",
+            "ScatterParams",
+            "ScatterParamsBatch",
+            "SendTelegramChatBot",
+            "StrToCombo",
+            "TESTER",
+            "TextSplitJoinByDelimiter"
+        ],
+        {
+            "author": "SeniorPioner",
+            "description": "Node Pack: PromptChecker for token toggling, KoboldCPP API, ModelMerging, Telegram-Bot-API, and more",
+            "nickname": "SP-Nodes",
+            "title": "SP-Nodes",
+            "title_aux": "SP-Nodes"
+        }
+    ],
     "https://github.com/banodoco/steerable-motion": [
         [
             "BatchCreativeInterpolation",
@@ -6783,6 +7294,7 @@
             "Batch Resize Image for SDXL",
             "Checkpoint Loader Simple Mikey",
             "CheckpointHash",
+            "CheckpointSaveModelOnly",
             "CinematicLook",
             "Empty Latent Ratio Custom SDXL",
             "Empty Latent Ratio Select SDXL",
@@ -6810,6 +7322,9 @@
             "MikeyLatentTileSamplerCustom",
             "MikeySamplerTiledAdvanced",
             "MikeySamplerTiledAdvancedBaseOnly",
+            "ModelMergePixArtSigmaXL2_1024MS",
+            "ModelMergeTrainDiff",
+            "ModelMergeTrainDiffPixartSigmaXL2_1024MS",
             "MosaicExpandImage",
             "OobaPrompt",
             "PresetRatioSelector",
@@ -6851,9 +7366,11 @@
     ],
     "https://github.com/bedovyy/ComfyUI_NAIDGenerator": [
         [
+            "ColorizeNAID",
             "GenerateNAID",
             "Img2ImgOptionNAID",
             "InpaintingOptionNAID",
+            "LineArtNAID",
             "MaskImageToNAID",
             "ModelOptionNAID",
             "NetworkOptionNAID",
@@ -6893,6 +7410,14 @@
         ],
         {
             "title_aux": "BrevImage"
+        }
+    ],
+    "https://github.com/blackcodetavern/ComfyUI-Benripack": [
+        [
+            "CharacterPipe"
+        ],
+        {
+            "title_aux": "ComfyUI-Benripack"
         }
     ],
     "https://github.com/blepping/ComfyUI-bleh": [
@@ -6943,6 +7468,20 @@
         ],
         {
             "title_aux": "ComfyUI jank HiDiffusion"
+        }
+    ],
+    "https://github.com/blepping/comfyui_overly_complicated_sampling": [
+        [
+            "OCS Group",
+            "OCS ModelSetMaxSigma",
+            "OCS MultiParam",
+            "OCS Param",
+            "OCS Sampler",
+            "OCS SimpleRestartSchedule",
+            "OCS Substeps"
+        ],
+        {
+            "title_aux": "comfyui_overly_complicated_sampling"
         }
     ],
     "https://github.com/blueraincoatli/comfyUI_SillyNodes": [
@@ -7244,18 +7783,24 @@
     "https://github.com/bvhari/ComfyUI_SUNoise": [
         [
             "SUNoiseLatent",
-            "SamplerDPM2Ancestral_SUN",
-            "SamplerDPMPP2SAncestral_SUN",
-            "SamplerDPMPP_2M_SDE_SUN",
-            "SamplerDPMPP_3M_SDE_SUN",
-            "SamplerDPMPP_SDE_SUN",
-            "SamplerEulerAncestralCFGpp_SUN",
-            "SamplerEulerAncestral_SUN",
             "SamplersSUNoise",
             "SamplersSUNoiseAdvanced"
         ],
         {
             "title_aux": "ComfyUI_SUNoise"
+        }
+    ],
+    "https://github.com/caleboleary/ComfyUI-Arc2Face": [
+        [
+            "Arc2FaceEncoderLoader",
+            "Arc2FaceFaceExtractor",
+            "Arc2FaceGenerator",
+            "Arc2FaceImageGridGenerator",
+            "Arc2FaceImg2ImgGenerator",
+            "Arc2FaceUNetLoader"
+        ],
+        {
+            "title_aux": "Arc2Face ComfyUI Node Library"
         }
     ],
     "https://github.com/catscandrive/comfyui-imagesubfolders/raw/main/loadImageWithSubfolders.py": [
@@ -7294,6 +7839,14 @@
             "title_aux": "comfyui-image-round"
         }
     ],
+    "https://github.com/cdxOo/comfyui-text-node-with-comments": [
+        [
+            "text-node-with-comments"
+        ],
+        {
+            "title_aux": "Text Node With Comments (@cdxoo)"
+        }
+    ],
     "https://github.com/celsojr2013/comfyui_jamworks_client": [
         [
             "Jamworks_Download",
@@ -7316,10 +7869,13 @@
     ],
     "https://github.com/cerspense/ComfyUI_cspnodes": [
         [
+            "DepthToNormalMap",
             "ImageDirIterator",
+            "IncrementEveryN",
             "Modelscopet2v",
             "Modelscopev2v",
             "RemapRange",
+            "ResizeByImage",
             "SplitImageChannels",
             "TextFileLineIterator",
             "VidDirIterator"
@@ -7817,6 +8373,18 @@
             "title_aux": "ComfyUI-Novakid"
         }
     ],
+    "https://github.com/chflame163/ComfyUI_CatVTON_Wrapper": [
+        [
+            "CatVTONWrapper"
+        ],
+        {
+            "author": "chflame",
+            "description": "CatVTON warpper for ComfyUI",
+            "nickname": "CatVTON_Wrapper",
+            "title": "CatVTON_Wrapper",
+            "title_aux": "ComfyUI_CatVTON_Wrapper"
+        }
+    ],
     "https://github.com/chflame163/ComfyUI_FaceSimilarity": [
         [
             "Face Similarity"
@@ -7859,7 +8427,9 @@
             "LayerMask: BiRefNetUltra",
             "LayerMask: BlendIf Mask",
             "LayerMask: CreateGradientMask",
+            "LayerMask: Florence2Ultra",
             "LayerMask: ImageToMask",
+            "LayerMask: LoadFlorence2Model",
             "LayerMask: MaskBoxDetect",
             "LayerMask: MaskByColor",
             "LayerMask: MaskByDifferent",
@@ -7880,6 +8450,9 @@
             "LayerMask: RemBgUltra",
             "LayerMask: RmBgUltra V2",
             "LayerMask: SegformerB2ClothesUltra",
+            "LayerMask: SegformerClothesPipelineLoader",
+            "LayerMask: SegformerFashionPipelineLoader",
+            "LayerMask: SegformerUltraV2",
             "LayerMask: SegmentAnythingUltra",
             "LayerMask: SegmentAnythingUltra V2",
             "LayerMask: Shadow & Highlight Mask",
@@ -7916,6 +8489,7 @@
             "LayerUtility: ExtendCanvas",
             "LayerUtility: ExtendCanvasV2",
             "LayerUtility: Float",
+            "LayerUtility: Florence2Image2Prompt",
             "LayerUtility: GetColorTone",
             "LayerUtility: GetColorToneV2",
             "LayerUtility: GetImageSize",
@@ -8134,6 +8708,16 @@
             "title_aux": "img2colors-comfyui-node"
         }
     ],
+    "https://github.com/christian-byrne/img2txt-comfyui-nodes": [
+        [
+            "img2txt BLIP/Llava Multimodel Tagger"
+        ],
+        {
+            "author": "christian-byrne",
+            "title": "Img2Txt auto captioning",
+            "title_aux": "img2txt-comfyui-nodes"
+        }
+    ],
     "https://github.com/christian-byrne/size-match-compositing-nodes": [
         [
             "Composite Alpha Layer",
@@ -8141,6 +8725,14 @@
         ],
         {
             "title_aux": "Node - Size Matcher"
+        }
+    ],
+    "https://github.com/christian-byrne/youtube-dl-comfyui": [
+        [
+            "YoutubeDL"
+        ],
+        {
+            "title_aux": "youtube-dl-comfyui"
         }
     ],
     "https://github.com/city96/ComfyUI_ColorMod": [
@@ -8154,6 +8746,7 @@
             "ColorModEdges",
             "ColorModMove",
             "ColorModPivot",
+            "ColorspaceConvert",
             "HDRCreate",
             "HDRExposureFusion",
             "LoadImageHDR",
@@ -8191,6 +8784,8 @@
             "HYDiTTextEncoderLoader",
             "MiaoBiCLIPLoader",
             "MiaoBiDiffusersLoader",
+            "OverrideCLIPDevice",
+            "OverrideVAEDevice",
             "PixArtCheckpointLoader",
             "PixArtCheckpointLoaderSimple",
             "PixArtControlNetCond",
@@ -8286,6 +8881,8 @@
             "CLIPSetLastLayer",
             "CLIPTextEncode",
             "CLIPTextEncodeControlnet",
+            "CLIPTextEncodeFlux",
+            "CLIPTextEncodeHunyuanDiT",
             "CLIPTextEncodeSD3",
             "CLIPTextEncodeSDXL",
             "CLIPTextEncodeSDXLRefiner",
@@ -8322,6 +8919,7 @@
             "ExponentialScheduler",
             "FeatherMask",
             "FlipSigmas",
+            "FluxGuidance",
             "FreeU",
             "FreeU_V2",
             "GITSScheduler",
@@ -8381,6 +8979,7 @@
             "MaskToImage",
             "ModelMergeAdd",
             "ModelMergeBlocks",
+            "ModelMergeFlux1",
             "ModelMergeSD1",
             "ModelMergeSD2",
             "ModelMergeSD3_2B",
@@ -8391,6 +8990,7 @@
             "ModelSamplingContinuousEDM",
             "ModelSamplingContinuousV",
             "ModelSamplingDiscrete",
+            "ModelSamplingFlux",
             "ModelSamplingSD3",
             "ModelSamplingStableCascade",
             "Morphology",
@@ -8418,6 +9018,7 @@
             "SamplerCustomAdvanced",
             "SamplerDPMAdaptative",
             "SamplerDPMPP_2M_SDE",
+            "SamplerDPMPP_2S_Ancestral",
             "SamplerDPMPP_3M_SDE",
             "SamplerDPMPP_SDE",
             "SamplerEulerAncestral",
@@ -8608,6 +9209,7 @@
             "IPAdapterAdvanced",
             "IPAdapterBatch",
             "IPAdapterClipVisionEnhancer",
+            "IPAdapterClipVisionEnhancerBatch",
             "IPAdapterCombineEmbeds",
             "IPAdapterCombineParams",
             "IPAdapterCombineWeights",
@@ -8615,6 +9217,7 @@
             "IPAdapterEmbedsBatch",
             "IPAdapterEncoder",
             "IPAdapterFaceID",
+            "IPAdapterFaceIDKolors",
             "IPAdapterFromParams",
             "IPAdapterInsightFaceLoader",
             "IPAdapterLoadEmbeds",
@@ -8640,6 +9243,44 @@
             "PrepImageForClipVision"
         ],
         {
+            "preemptions": [
+                "IPAAdapterFaceIDBatch",
+                "IPAdapter",
+                "IPAdapterAdvanced",
+                "IPAdapterBatch",
+                "IPAdapterClipVisionEnhancer",
+                "IPAdapterClipVisionEnhancerBatch",
+                "IPAdapterCombineEmbeds",
+                "IPAdapterCombineParams",
+                "IPAdapterCombineWeights",
+                "IPAdapterEmbeds",
+                "IPAdapterEmbedsBatch",
+                "IPAdapterEncoder",
+                "IPAdapterFaceID",
+                "IPAdapterFromParams",
+                "IPAdapterInsightFaceLoader",
+                "IPAdapterLoadEmbeds",
+                "IPAdapterMS",
+                "IPAdapterModelLoader",
+                "IPAdapterNoise",
+                "IPAdapterPreciseComposition",
+                "IPAdapterPreciseCompositionBatch",
+                "IPAdapterPreciseStyleTransfer",
+                "IPAdapterPreciseStyleTransferBatch",
+                "IPAdapterPromptScheduleFromWeightsStrategy",
+                "IPAdapterRegionalConditioning",
+                "IPAdapterSaveEmbeds",
+                "IPAdapterStyleComposition",
+                "IPAdapterStyleCompositionBatch",
+                "IPAdapterTiled",
+                "IPAdapterTiledBatch",
+                "IPAdapterUnifiedLoader",
+                "IPAdapterUnifiedLoaderCommunity",
+                "IPAdapterUnifiedLoaderFaceID",
+                "IPAdapterWeights",
+                "IPAdapterWeightsFromStrategy",
+                "PrepImageForClipVision"
+            ],
             "title_aux": "ComfyUI_IPAdapter_plus"
         }
     ],
@@ -8676,11 +9317,13 @@
             "DebugTensorShape+",
             "DrawText+",
             "ExtractKeyframes+",
+            "FluxSamplerParams+",
             "GetImageSize+",
             "ImageApplyLUT+",
             "ImageBatchMultiple+",
             "ImageCASharpening+",
             "ImageColorMatch+",
+            "ImageColorMatchAdobe+",
             "ImageComposite+",
             "ImageCompositeFromMaskBatch+",
             "ImageCrop+",
@@ -8698,6 +9341,7 @@
             "ImageRemoveBackground+",
             "ImageResize+",
             "ImageSeamCarving+",
+            "ImageSmartSharpen+",
             "ImageTile+",
             "ImageToDevice+",
             "ImageUntile+",
@@ -8721,11 +9365,15 @@
             "ModelCompile+",
             "NoiseFromImage+",
             "PixelOEPixelize+",
+            "PlotParameters+",
             "RemBGSession+",
             "RemoveLatentMask+",
             "SD3NegativeConditioning+",
             "SDXLEmptyLatentSizePicker+",
+            "SamplerSelectHelper+",
+            "SchedulerSelectHelper+",
             "SimpleMath+",
+            "TextEncodeForSamplerParams+",
             "TransitionMask+",
             "TransparentBGSession+"
         ],
@@ -8776,6 +9424,17 @@
             "title_aux": "Face Compare"
         }
     ],
+    "https://github.com/da2el-ai/ComfyUI-d2-send-eagle": [
+        [
+            "D2 Send Eagle"
+        ],
+        {
+            "author": "da2el",
+            "description": "Send images to Eagle, an image management application",
+            "title": "D2 Send Eagle",
+            "title_aux": "D2 Send Eagle"
+        }
+    ],
     "https://github.com/da2el-ai/ComfyUI-d2-size-selector": [
         [
             "D2_SizeSelector"
@@ -8802,8 +9461,23 @@
     ],
     "https://github.com/dagthomas/comfyui_dagthomas": [
         [
+            "APNLatent",
+            "ApplyBloom",
+            "CFGSkimming",
+            "CustomPromptLoader",
+            "DynamicStringCombinerNode",
+            "FlexibleStringMergerNode",
+            "GPT4MiniNode",
+            "GPT4VisionNode",
+            "Gpt4CustomVision",
+            "Gpt4VisionCloner",
+            "MergedOllamaNode",
+            "OllamaNode",
             "PGSD3LatentGenerator",
-            "PromptGenerator"
+            "PromptGenerator",
+            "RandomIntegerNode",
+            "SentenceMixerNode",
+            "StringMergerNode"
         ],
         {
             "title_aux": "SDXL Auto Prompter"
@@ -9292,6 +9966,16 @@
             "title_aux": "ComfyUI Easy Padding"
         }
     ],
+    "https://github.com/eastoc/ComfyUI_SemanticSAM": [
+        [
+            "PointPrompt",
+            "SemanticSAMLoader",
+            "SemanticSAMSegment"
+        ],
+        {
+            "title_aux": "Semantic-SAM"
+        }
+    ],
     "https://github.com/edenartlab/eden_comfy_pipelines": [
         [
             "Animation_RGB_Mask",
@@ -9335,6 +10019,15 @@
         ],
         {
             "title_aux": "Various custom nodes by Eden.art"
+        }
+    ],
+    "https://github.com/emojiiii/ComfyUI_Emojiiii_Custom_Nodes": [
+        [
+            "KolorsMultiTextEncode",
+            "MultiTextEncode"
+        ],
+        {
+            "title_aux": "ComfyUI_Emojiiii_Custom_Nodes"
         }
     ],
     "https://github.com/evanspearman/ComfyMath": [
@@ -9505,31 +10198,55 @@
             "title_aux": "Pixelization"
         }
     ],
+    "https://github.com/filliptm/ComfyUI_FL-Trainer": [
+        [
+            "FL_ImageCaptionSaver",
+            "FL_KohyaSSAdvConfig",
+            "FL_KohyaSSDatasetConfig",
+            "FL_KohyaSSInitWorkspace",
+            "FL_KohyaSSTrain",
+            "FL_Kohya_EasyTrain",
+            "FL_LoadImagesFromDirectoryPath",
+            "FL_SliderLoraAdvConfig",
+            "FL_SliderLoraDatasetConfig",
+            "FL_SliderLoraInitWorkspace",
+            "FL_SliderLoraTrain"
+        ],
+        {
+            "title_aux": "ComfyUI_FL-Trainer"
+        }
+    ],
     "https://github.com/filliptm/ComfyUI_Fill-Nodes": [
         [
             "FL_Ascii",
-            "FL_AudioConverter",
-            "FL_AudioFrameCalculator",
-            "FL_AudioPreview",
             "FL_BatchAlign",
             "FL_BulletHellGame",
+            "FL_CaptionToCSV",
             "FL_CodeNode",
+            "FL_ColorPicker",
             "FL_DirectoryCrawl",
             "FL_Dither",
+            "FL_FractalKSampler",
+            "FL_GPT_Vision",
             "FL_Glitch",
+            "FL_HFHubModelUploader",
+            "FL_HF_Character",
             "FL_HalftonePattern",
             "FL_HexagonalPattern",
+            "FL_ImageCaptionLayout",
             "FL_ImageCaptionSaver",
             "FL_ImageCollage",
             "FL_ImageDimensionDisplay",
-            "FL_ImageDurationSync",
             "FL_ImageNotes",
             "FL_ImagePixelator",
             "FL_ImageRandomizer",
             "FL_InfiniteZoom",
             "FL_InpaintCrop",
             "FL_Inpaint_Stitch",
+            "FL_KsamplerBasic",
+            "FL_KsamplerPlus",
             "FL_KsamplerSettings",
+            "FL_MirrorAndAppendCaptions",
             "FL_NFTGenerator",
             "FL_PaperDrawn",
             "FL_PasteOnCanvas",
@@ -9540,12 +10257,19 @@
             "FL_RetroEffect",
             "FL_Ripple",
             "FL_SDUltimate_Slices",
+            "FL_SendToDiscordWebhook",
             "FL_SeparateMaskComponents",
             "FL_Shadertoy",
+            "FL_SimpleGPTVision",
+            "FL_SystemCheck",
             "FL_TD_Sampler",
             "FL_TetrisGame",
+            "FL_TimeLine",
             "FL_VideoCropMask",
-            "FL_VideoRecompose"
+            "FL_VideoRecompose",
+            "FL_ZipDirectory",
+            "FL_ZipSave",
+            "GradientImageGenerator"
         ],
         {
             "title_aux": "ComfyUI_Fill-Nodes"
@@ -9704,6 +10428,16 @@
         ],
         {
             "title_aux": "ComfyUI-Prompter-fofrAI"
+        }
+    ],
+    "https://github.com/fofr/comfyui-fofr-toolkit": [
+        [
+            "Incrementer \ud83e\udeb4",
+            "Width and height for scaling image to ideal resolution \ud83e\udeb4",
+            "Width and height from aspect ratio \ud83e\udeb4"
+        ],
+        {
+            "title_aux": "comfyui-fofr-toolkit"
         }
     ],
     "https://github.com/forever22777/comfyui-self-guidance": [
@@ -9931,99 +10665,6 @@
             "title_aux": "SaltAI Language Toolkit"
         }
     ],
-    "https://github.com/get-salt-AI/SaltAI_LlamaIndex": [
-        [
-            "AddTool",
-            "ChangeSystemMessage",
-            "ClearMemory",
-            "ConversableAgentCreator",
-            "ConversableAgentCreatorAdvanced",
-            "ConvertAgentAsTool",
-            "ConvertAgentToLlamaindex",
-            "CreateTavilySearchTool",
-            "Example",
-            "GenerateReply",
-            "GroupChat",
-            "GroupChatAdvanced",
-            "GroupChatManagerCreator",
-            "LLMCSVReader",
-            "LLMChat",
-            "LLMChatBot",
-            "LLMChatEngine",
-            "LLMChatMessageConcat",
-            "LLMChatMessages",
-            "LLMChatMessagesAdv",
-            "LLMComplete",
-            "LLMCustomNodeComposer",
-            "LLMDirectoryReader",
-            "LLMDocumentListAppend",
-            "LLMDocxReader",
-            "LLMEpubReader",
-            "LLMFlatReader",
-            "LLMHTMLTagReader",
-            "LLMHWPReader",
-            "LLMHtmlComposer",
-            "LLMHtmlRepair",
-            "LLMIPYNBReader",
-            "LLMImageCaptionReader",
-            "LLMImageTabularChartReader",
-            "LLMImageTextReader",
-            "LLMImageVisionLLMReader",
-            "LLMInputToDocuments",
-            "LLMJsonComposer",
-            "LLMJsonRepair",
-            "LLMLLaVANextImageEvaluator",
-            "LLMLLaVANextModelLoader",
-            "LLMMarkdownComposer",
-            "LLMMarkdownReader",
-            "LLMMarkdownRepair",
-            "LLMMboxReader",
-            "LLMMultiModalImageEvaluation",
-            "LLMNotionReader",
-            "LLMOpenAIModel",
-            "LLMOpenAIModelOpts",
-            "LLMPDFReader",
-            "LLMPagedCSVReader",
-            "LLMPandasCSVReader",
-            "LLMParquetDatasetSearcher",
-            "LLMPostProcessDocuments",
-            "LLMPptxReader",
-            "LLMPyMuPDFReader",
-            "LLMQueryEngine",
-            "LLMQueryEngineAdv",
-            "LLMQueryEngineAsTool",
-            "LLMRTFReader",
-            "LLMRegexCreator",
-            "LLMRegexRepair",
-            "LLMRssReaderNode",
-            "LLMSaltWebCrawler",
-            "LLMScaleSERPSearch",
-            "LLMSemanticSplitterNodeParser",
-            "LLMSentenceSplitterNodeCreator",
-            "LLMServiceContextAdv",
-            "LLMServiceContextDefault",
-            "LLMSimpleWebPageReader",
-            "LLMSimpleWebPageReaderAdv",
-            "LLMSummaryIndex",
-            "LLMTavilyResearch",
-            "LLMTrafilaturaWebReader",
-            "LLMTrafilaturaWebReaderAdv",
-            "LLMTreeIndex",
-            "LLMUnstructuredReader",
-            "LLMVectorStoreIndex",
-            "LLMVectorStoreIndexAdv",
-            "LLMVideoAudioReader",
-            "LLMXMLReader",
-            "LLMYamlComposer",
-            "LLMYamlRepair",
-            "SaltJSONQueryEngine",
-            "SendMessage",
-            "SimpleChat"
-        ],
-        {
-            "title_aux": "SaltAI_LlamaIndex"
-        }
-    ],
     "https://github.com/giriss/comfy-image-saver": [
         [
             "Cfg Literal",
@@ -10038,6 +10679,44 @@
         ],
         {
             "title_aux": "Save Image with Generation Metadata"
+        }
+    ],
+    "https://github.com/gisu/comfyui-foxpack": [
+        [
+            "Add_To_List",
+            "BaseSamplerSetup",
+            "Big_Prompter",
+            "Change_Entries_In_A_List",
+            "Change_Entry_From_List",
+            "CheckpointMetaExtractor",
+            "CheckpointSelector",
+            "Complete_Setup",
+            "Convert_Into",
+            "Negate_Boolean",
+            "Optional_Value_Override",
+            "OverrideSamplerSetup",
+            "Override_Value_If_Unset",
+            "Pick_Value_From_Dict",
+            "Pick_Values_From_List",
+            "Refine_Prompt",
+            "Refine_Setup",
+            "Remap_Values",
+            "Remove_Values_From_List",
+            "Select_By_Index",
+            "Select_Line_By_Index",
+            "Select_String_By_Index",
+            "SetupSelector",
+            "Show_Type",
+            "Split_Entry_In_2Chunks",
+            "Split_Entry_In_4Chunks",
+            "Split_Entry_In_6Chunks",
+            "Split_Entry_In_8Chunks",
+            "Step_Denoise",
+            "UniversalLatentHelper",
+            "Universal_VAE_Loader"
+        ],
+        {
+            "title_aux": "foxpack"
         }
     ],
     "https://github.com/githubYiheng/ComfyUI_Change_IMAGE_BOREDER": [
@@ -10117,6 +10796,23 @@
         ],
         {
             "title_aux": "Load Image From Base64 URI"
+        }
+    ],
+    "https://github.com/glowcone/comfyui-string-converter": [
+        [
+            "StringToFloat",
+            "StringToInt"
+        ],
+        {
+            "title_aux": "String Converter"
+        }
+    ],
+    "https://github.com/goburiin/nsfwrecog-comfyui": [
+        [
+            "NSFWDetectorNode"
+        ],
+        {
+            "title_aux": "nsfwrecog-comfyui"
         }
     ],
     "https://github.com/godspede/ComfyUI_Substring": [
@@ -10222,6 +10918,7 @@
             "Griptape Agent Config: Anthropic",
             "Griptape Agent Config: Azure OpenAI",
             "Griptape Agent Config: Custom Structure",
+            "Griptape Agent Config: Environment Variables",
             "Griptape Agent Config: Google",
             "Griptape Agent Config: HuggingFace",
             "Griptape Agent Config: LM Studio",
@@ -10251,19 +10948,9 @@
             "Griptape Display: Text",
             "Griptape Driver: Amazon Bedrock Stable Diffusion",
             "Griptape Driver: Amazon Bedrock Titan",
-            "Griptape Driver: Amazon OpenSearch Vector Store",
-            "Griptape Driver: Azure MongoDB Vector Store",
-            "Griptape Driver: DuckDuckGo WebSearch",
-            "Griptape Driver: Google WebSearch",
+            "Griptape Driver: Azure OpenAI Image Generation",
             "Griptape Driver: Leonardo.AI",
-            "Griptape Driver: Local Vector Store",
-            "Griptape Driver: Marqo Vector Store",
-            "Griptape Driver: MongoDB Atlas Vector Store",
             "Griptape Driver: OpenAI Image Generation",
-            "Griptape Driver: PGVector Vector Store",
-            "Griptape Driver: Pinecone Vector Store",
-            "Griptape Driver: Qdrant Vector Store",
-            "Griptape Driver: Redis Vector Store",
             "Griptape Embedding Driver: Amazon Bedrock Titan",
             "Griptape Embedding Driver: Amazon SageMaker Jumpstart",
             "Griptape Embedding Driver: Azure OpenAI",
@@ -10275,13 +10962,9 @@
             "Griptape Embedding Driver: OpenAI Compatible",
             "Griptape Embedding Driver: Voyage AI",
             "Griptape Expand: Agent Nodes",
-            "Griptape Image Query Driver: Amazon Bedrock Claude",
-            "Griptape Image Query Driver: Anthropic",
-            "Griptape Image Query Driver: Azure OpenAI",
-            "Griptape Image Query Driver: Ollama",
-            "Griptape Image Query Driver: OpenAI",
             "Griptape Load: Audio",
             "Griptape Load: Image From URL",
+            "Griptape Load: Text",
             "Griptape Pipeline: Add Task",
             "Griptape Pipeline: Insert Task",
             "Griptape Prompt Driver: Amazon Bedrock",
@@ -10307,6 +10990,7 @@
             "Griptape Run: Text to Speech",
             "Griptape Run: Tool Task",
             "Griptape Run: Toolkit Task",
+            "Griptape Save: Text",
             "Griptape Set: Default Agent",
             "Griptape Text To Speech Driver: ElevenLabs",
             "Griptape Text To Speech Driver: OpenAI",
@@ -10319,9 +11003,21 @@
             "Griptape Tool: VectorStore",
             "Griptape Tool: WebScraper",
             "Griptape Tool: WebSearch",
+            "Griptape Vector Store Driver: Amazon OpenSearch",
+            "Griptape Vector Store Driver: Azure MongoDB",
+            "Griptape Vector Store Driver: Griptape Cloud KnowledgeBase",
+            "Griptape Vector Store Driver: Local",
+            "Griptape Vector Store Driver: Marqo",
+            "Griptape Vector Store Driver: MongoDB Atlas",
+            "Griptape Vector Store Driver: PGVector",
+            "Griptape Vector Store Driver: Pinecone",
+            "Griptape Vector Store Driver: Qdrant",
+            "Griptape Vector Store Driver: Redis",
             "Griptape Vector Store: Add Text",
             "Griptape Vector Store: Query",
-            "Grptape Driver: Azure OpenAI Image Generation"
+            "Griptape WebSearch Driver: DuckDuckGo",
+            "Griptape WebSearch Driver: Google",
+            "Gt Run Agent"
         ],
         {
             "author": "Jason Schleifer",
@@ -10458,11 +11154,22 @@
     "https://github.com/heshengtao/comfyui_LLM_party": [
         [
             "About_us",
+            "AmapRegeoTool",
+            "AmapWeatherTool",
             "CLIPTextEncode_party",
             "ChatTTS_Node",
             "CosyVoice",
             "Dingding",
             "Dingding_tool",
+            "FeishuDownloadAudio",
+            "FeishuDownloadImage",
+            "FeishuGetHistory",
+            "FeishuSendMsg",
+            "FileOnlineDelete_gitee",
+            "FileOnlineStorage_gitee",
+            "FilePathExists",
+            "GeocodeTool",
+            "Images2Image",
             "KG_csv_toolkit_developer",
             "KG_csv_toolkit_user",
             "KG_json_toolkit_developer",
@@ -10475,13 +11182,16 @@
             "LLM_local",
             "LLM_local_loader",
             "LLavaLoader",
+            "URL2IMG",
             "VAEDecode_party",
             "accuweather_tool",
+            "advance_ebd_tool",
             "api_function",
             "api_tool",
             "arxiv_tool",
             "bing_loader",
             "bing_tool",
+            "bool_logic",
             "check_web_tool",
             "classify_function",
             "classify_function_plus",
@@ -10489,9 +11199,16 @@
             "classify_persona_plus",
             "clear_model",
             "custom_persona",
+            "discord_bot",
+            "discord_file_monitor",
+            "discord_send",
+            "duckduckgo_loader",
+            "duckduckgo_tool",
             "ebd_tool",
+            "embeddings_function",
             "end_dialog",
             "end_workflow",
+            "extra_parameters",
             "feishu",
             "feishu_tool",
             "file_combine",
@@ -10501,7 +11218,10 @@
             "google_loader",
             "google_tool",
             "image_iterator",
+            "img2path",
+            "interpreter_function",
             "interpreter_tool",
+            "json2text",
             "json_get_value",
             "json_parser",
             "keyword_tool",
@@ -10510,26 +11230,32 @@
             "list_extend",
             "list_extend_plus",
             "listen_audio",
-            "llama_guff_loader",
-            "load_embeddings",
+            "load_ebd",
             "load_excel",
             "load_file",
             "load_file_folder",
+            "load_img_path",
+            "load_int",
             "load_keyword",
             "load_name",
+            "load_openai_ebd",
             "load_persona",
             "load_url",
             "load_wikipedia",
             "new_interpreter_tool",
+            "none2false",
             "omost_decode",
+            "omost_json2py",
             "omost_setting",
+            "openai_ebd_tool",
             "openai_tts",
             "openai_whisper",
             "parameter_combine",
             "parameter_combine_plus",
             "parameter_function",
-            "play_audio",
             "replace_string",
+            "save_ebd_database",
+            "save_openai_ebd",
             "show_text_party",
             "start_dialog",
             "start_workflow",
@@ -10537,6 +11263,7 @@
             "string_logic",
             "substring",
             "text2json",
+            "text2parameters",
             "text_iterator",
             "time_tool",
             "tool_combine",
@@ -10795,6 +11522,7 @@
     ],
     "https://github.com/iemesowum/ComfyUI_IsaacNodes": [
         [
+            "I_AmplitudeToWeights",
             "I_BinaryAmplitudeGate",
             "I_UnmixAudio",
             "I_WeightsListToWeights"
@@ -11037,6 +11765,8 @@
             "CM_NumberToInt JK",
             "CM_NumberUnaryCondition JK",
             "CM_NumberUnaryOperation JK",
+            "CM_PromptCombine_JK",
+            "CM_StringBinaryCondition_JK",
             "CM_Vec2BinaryCondition JK",
             "CM_Vec2BinaryOperation JK",
             "CM_Vec2FloatOperation_JK",
@@ -11202,6 +11932,8 @@
             "JWImageLevels",
             "JWImageLoadRGB",
             "JWImageLoadRGBA",
+            "JWImageLoadRGBA From Clipboard",
+            "JWImageLoadRGBFromClipboard",
             "JWImageLoadRGBIfExists",
             "JWImageMix",
             "JWImageResize",
@@ -11276,9 +12008,9 @@
         [
             "FacelessFaceRestore",
             "FacelessFaceSwap",
-            "FacelessLoadFrames",
             "FacelessLoadImageUrl",
             "FacelessLoadVideo",
+            "FacelessLoadVideoImages",
             "FacelessLoadVideoUrl",
             "FacelessMergeVideos",
             "FacelessRemoveBackground",
@@ -11340,9 +12072,152 @@
             "title_aux": "ULTools for ComfyUI"
         }
     ],
+    "https://github.com/jn-jairo/jn_comfyui": [
+        [
+            "JN_AreaAround",
+            "JN_AreaInfo",
+            "JN_AreaNormalize",
+            "JN_AreaToMask",
+            "JN_AreaWidthHeight",
+            "JN_AreaXY",
+            "JN_AudioArrayToBatch",
+            "JN_AudioAutoTune",
+            "JN_AudioBatchToArray",
+            "JN_AudioCompare",
+            "JN_AudioConcatenation",
+            "JN_AudioGetChannels",
+            "JN_AudioInfo",
+            "JN_AudioNoiseReduction",
+            "JN_AudioNormalize",
+            "JN_AudioPitch",
+            "JN_AudioPlot",
+            "JN_AudioReverberation",
+            "JN_AudioSampleRate",
+            "JN_AudioSetChannels",
+            "JN_AudioSlice",
+            "JN_AudioSpeed",
+            "JN_AudioStackChannels",
+            "JN_AudioTempo",
+            "JN_AudioTrimSilence",
+            "JN_AudioVolume",
+            "JN_Blip",
+            "JN_BlipLoader",
+            "JN_BooleanOperation",
+            "JN_Condition",
+            "JN_CoolDown",
+            "JN_CoolDownOutput",
+            "JN_DatetimeFormat",
+            "JN_DatetimeInfo",
+            "JN_DatetimeNow",
+            "JN_Dump",
+            "JN_DumpOutput",
+            "JN_Exec",
+            "JN_ExecOutput",
+            "JN_FaceCrop",
+            "JN_FaceRestoreModelLoader",
+            "JN_FaceRestoreWithModel",
+            "JN_FirstActive",
+            "JN_Flow",
+            "JN_FlowOutput",
+            "JN_ImageAddBackground",
+            "JN_ImageAddMask",
+            "JN_ImageBatch",
+            "JN_ImageCenterArea",
+            "JN_ImageCrop",
+            "JN_ImageGrid",
+            "JN_ImageInfo",
+            "JN_ImageRemoveBackground",
+            "JN_ImageSharpness",
+            "JN_ImageSquare",
+            "JN_ImageToMask",
+            "JN_ImageUncrop",
+            "JN_KSampler",
+            "JN_KSamplerAdvancedParams",
+            "JN_KSamplerFaceRestoreParams",
+            "JN_KSamplerResizeInputParams",
+            "JN_KSamplerResizeMaskAreaParams",
+            "JN_KSamplerResizeOutputParams",
+            "JN_KSamplerSeamlessParams",
+            "JN_KSamplerTileParams",
+            "JN_KeyValue",
+            "JN_LoadAudioDirectory",
+            "JN_LoadImageDirectory",
+            "JN_LogicOperation",
+            "JN_MaskBatch",
+            "JN_MaskInfo",
+            "JN_MaskToArea",
+            "JN_MaskToImage",
+            "JN_MathOperation",
+            "JN_MathOperationArray",
+            "JN_MeowLoadVoice",
+            "JN_MeowSaveVoice",
+            "JN_MeowSentenceSplit",
+            "JN_MeowTts",
+            "JN_MeowTtsAudioToContext",
+            "JN_MeowTtsCoarse",
+            "JN_MeowTtsDecode",
+            "JN_MeowTtsFine",
+            "JN_MeowTtsLoadContext",
+            "JN_MeowTtsModel",
+            "JN_MeowTtsModelCoarse",
+            "JN_MeowTtsModelEncodec",
+            "JN_MeowTtsModelFine",
+            "JN_MeowTtsModelHubert",
+            "JN_MeowTtsModelSemantic",
+            "JN_MeowTtsSaveContext",
+            "JN_MeowTtsSemantic",
+            "JN_MeowTtsTokenizerHubert",
+            "JN_MeowVc",
+            "JN_MeowVcConvertVoice",
+            "JN_MeowVcEncodeSource",
+            "JN_MeowVcEncodeTarget",
+            "JN_MeowVcLoadSpeaker",
+            "JN_MeowVcModelFreeVC",
+            "JN_MeowVcModelWavLM",
+            "JN_MeowVcSaveSpeaker",
+            "JN_PreviewAudio",
+            "JN_PreviewImage",
+            "JN_PreviewMask",
+            "JN_PrimitiveArrayInfo",
+            "JN_PrimitiveBatchToArray",
+            "JN_PrimitiveBoolean",
+            "JN_PrimitiveFloat",
+            "JN_PrimitiveInt",
+            "JN_PrimitivePrompt",
+            "JN_PrimitiveString",
+            "JN_PrimitiveStringMultiline",
+            "JN_PrimitiveStringToArray",
+            "JN_PrimitiveToArray",
+            "JN_PrimitiveToBoolean",
+            "JN_PrimitiveToFloat",
+            "JN_PrimitiveToInt",
+            "JN_PrimitiveToString",
+            "JN_RemBGSession",
+            "JN_SaveAudio",
+            "JN_SaveImage",
+            "JN_Seamless",
+            "JN_SeamlessBorder",
+            "JN_SeamlessBorderCrop",
+            "JN_SelectItem",
+            "JN_Sleep",
+            "JN_SleepOutput",
+            "JN_SliceOperation",
+            "JN_StopIf",
+            "JN_StopIfOutput",
+            "JN_TensorInfo",
+            "JN_TextConcatenation",
+            "JN_TextReplace",
+            "JN_TimedeltaFormat",
+            "JN_TimedeltaInfo"
+        ],
+        {
+            "title_aux": "JNComfy"
+        }
+    ],
     "https://github.com/john-mnz/ComfyUI-Inspyrenet-Rembg": [
         [
-            "InspyrenetRembg"
+            "InspyrenetRembg",
+            "InspyrenetRembgAdvanced"
         ],
         {
             "title_aux": "ComfyUI-Inspyrenet-Rembg"
@@ -11353,7 +12228,9 @@
             "LCMScheduler",
             "SamplerLCMAlternative",
             "SamplerLCMCycle",
-            "SamplerLCMDualNoise"
+            "SamplerLCMDualNoise",
+            "SamplerLCMDuoFusion",
+            "SamplerLCMParallel"
         ],
         {
             "title_aux": "ComfyUI-sampler-lcm-alternative"
@@ -11574,6 +12451,16 @@
             "title_aux": "ComfyUI-text-file-util"
         }
     ],
+    "https://github.com/kappa54m/ComfyUI_Usability": [
+        [
+            "KLoadImageByPath",
+            "KLoadImageByPathAdvanced",
+            "KLoadImageDedup"
+        ],
+        {
+            "title_aux": "ComfyUI Usability"
+        }
+    ],
     "https://github.com/katalist-ai/comfyUI-nsfw-detection": [
         [
             "NudenetDetector"
@@ -11746,7 +12633,9 @@
     ],
     "https://github.com/kijai/ComfyUI-Florence2": [
         [
+            "DownloadAndLoadFlorence2Lora",
             "DownloadAndLoadFlorence2Model",
+            "Florence2ModelLoader",
             "Florence2Run"
         ],
         {
@@ -11815,7 +12704,7 @@
             "CustomSigmas",
             "DownloadAndLoadCLIPSeg",
             "DrawInstanceDiffusionTracking",
-            "DummyLatentOut",
+            "DummyOut",
             "EmptyLatentImagePresets",
             "FilterZeroMasksAndCorrespondingImages",
             "FlipSigmasAdjusted",
@@ -11867,6 +12756,7 @@
             "OffsetMask",
             "OffsetMaskByNormalizedAmplitude",
             "PlotCoordinates",
+            "PointsEditor",
             "PreviewAnimation",
             "RemapImageRange",
             "RemapMaskRange",
@@ -11877,6 +12767,7 @@
             "SV3D_BatchSchedule",
             "SaveImageWithAlpha",
             "ScaleBatchPromptSchedule",
+            "Screencap_mss",
             "Sleep",
             "SomethingToString",
             "SoundReactive",
@@ -11889,6 +12780,7 @@
             "StringConstantMultiline",
             "Superprompt",
             "VRAM_Debug",
+            "WebcamCaptureCV2",
             "WeightScheduleConvert",
             "WeightScheduleExtend",
             "WidgetToString"
@@ -11923,7 +12815,15 @@
     "https://github.com/kijai/ComfyUI-LivePortraitKJ": [
         [
             "DownloadAndLoadLivePortraitModels",
-            "LivePortraitProcess"
+            "KeypointScaler",
+            "KeypointsToImage",
+            "LivePortraitComposite",
+            "LivePortraitCropper",
+            "LivePortraitLoadCropper",
+            "LivePortraitLoadFaceAlignmentCropper",
+            "LivePortraitLoadMediaPipeCropper",
+            "LivePortraitProcess",
+            "LivePortraitRetargeting"
         ],
         {
             "title_aux": "ComfyUI-LivePortraitKJ"
@@ -12018,6 +12918,19 @@
             "title_aux": "ComfyUI-moondream"
         }
     ],
+    "https://github.com/kijai/ComfyUI-segment-anything-2": [
+        [
+            "DownloadAndLoadSAM2Model",
+            "Florence2toCoordinates",
+            "Sam2AutoSegmentation",
+            "Sam2Segmentation",
+            "Sam2VideoSegmentation",
+            "Sam2VideoSegmentationAddPoints"
+        ],
+        {
+            "title_aux": "ComfyUI-segment-anything-2"
+        }
+    ],
     "https://github.com/kinfolk0117/ComfyUI_GradientDeepShrink": [
         [
             "GradientPatchModelAddDownscale",
@@ -12055,6 +12968,7 @@
             "SingleString",
             "SizeSelector",
             "YellowBus",
+            "YellowBusV2",
             "concat"
         ],
         {
@@ -12249,13 +13163,47 @@
             "title_aux": "LNL Frame Selector"
         }
     ],
+    "https://github.com/leeguandong/ComfyUI_InternVL2": [
+        [
+            "DynamicPreprocess",
+            "InternVLHFInference",
+            "InternVLLMDEPLOYInference",
+            "InternVLModelLoader"
+        ],
+        {
+            "title_aux": "ComfyUI_InternVL2"
+        }
+    ],
+    "https://github.com/leeguandong/ComfyUI_LLaSM": [
+        [
+            "LLaSM2Interface",
+            "LLaSM2ModelLoader",
+            "LLaSMLoadAudio"
+        ],
+        {
+            "title_aux": "ComfyUI_LLaSM"
+        }
+    ],
+    "https://github.com/leeguandong/ComfyUI_M3Net": [
+        [
+            "M3Net_Interface",
+            "M3Net_ModelLoader"
+        ],
+        {
+            "title_aux": "ComfyUI_M3Net"
+        }
+    ],
     "https://github.com/leestuartx/ComfyUI-GG": [
         [
             "AddPaddingToImage",
+            "ForLoopNode",
             "ImageMetadataExtractor",
+            "InputNode",
             "MetadataExtractBySeed",
             "MetadataExtractorBySeed",
-            "ResizeImageProportionally"
+            "OutputNode",
+            "ResizeImageProportionally",
+            "WorkspaceNode"
         ],
         {
             "title_aux": "ComfyUI-GG"
@@ -12276,6 +13224,14 @@
             "title_aux": "ComfyUI-TRA"
         }
     ],
+    "https://github.com/lenskikh/ComfyUI-Prompt-Worker": [
+        [
+            "Prompt Worker"
+        ],
+        {
+            "title_aux": "Propmt Worker"
+        }
+    ],
     "https://github.com/leoleelxh/ComfyUI-LLMs": [
         [
             "\ud83d\uddbc\ufe0f LLMs_Vison_Ali",
@@ -12286,6 +13242,14 @@
         ],
         {
             "title_aux": "ComfyUI-LLMs"
+        }
+    ],
+    "https://github.com/liangt/comfyui-loadimagewithsubfolder": [
+        [
+            "LoadImageWithSubfolder"
+        ],
+        {
+            "title_aux": "comfyui-loadimagewithsubfolder"
         }
     ],
     "https://github.com/linshier/comfyui-remote-tools": [
@@ -12478,6 +13442,29 @@
             "title_aux": "ComfyUI-RefSampling"
         }
     ],
+    "https://github.com/logtd/ComfyUI-RefUNet": [
+        [
+            "ConfigRefMapAdv",
+            "ConfigureRefNet",
+            "CreateRefBank",
+            "CustomRefMapSD1",
+            "PrepareRefLatents",
+            "ReadSampler",
+            "RefModelSamplingPred",
+            "WriteSampler"
+        ],
+        {
+            "title_aux": "ComfyUI-RefUNet"
+        }
+    ],
+    "https://github.com/logtd/ComfyUI-SEGAttention": [
+        [
+            "SEGAttention"
+        ],
+        {
+            "title_aux": "ComfyUI-SEGAttention"
+        }
+    ],
     "https://github.com/logtd/ComfyUI-TrackingNodes": [
         [
             "OpenPoseTrackerNode",
@@ -12553,23 +13540,6 @@
             "title_aux": "comfyui-mask-util"
         }
     ],
-    "https://github.com/longgui0318/comfyui-oms-diffusion": [
-        [
-            "Add Magic Clothing Attention",
-            "Change Pipeline Dtype And Device",
-            "Change Pixel Value Normalization",
-            "Diffusers Model Makeup &MC",
-            "Diffusers Scheduler Loader &MC",
-            "Load Magic Clothing Adapter",
-            "Load Magic Clothing Model",
-            "Load Magic Clothing Pipeline",
-            "Load Magic Clothing Pipeline With Path",
-            "RUN Magic Clothing Diffusers Model"
-        ],
-        {
-            "title_aux": "comfyui-oms-diffusion"
-        }
-    ],
     "https://github.com/lordgasmic/ComfyUI-Wildcards/raw/master/wildcards.py": [
         [
             "CLIPTextEncodeWithWildcards"
@@ -12626,7 +13596,8 @@
     ],
     "https://github.com/lrzjason/Comfyui-Kolors-Utils": [
         [
-            "Save Weight As Kolors Unet"
+            "SaveKolors",
+            "SaveWeightAsKolorsUnet"
         ],
         {
             "title_aux": "Comfyui Kolors Utils"
@@ -12692,6 +13663,7 @@
             "ImpactDilate_Mask_SEG_ELT",
             "ImpactDummyInput",
             "ImpactEdit_SEG_ELT",
+            "ImpactExecutionOrderController",
             "ImpactFloat",
             "ImpactFrom_SEG_ELT",
             "ImpactFrom_SEG_ELT_bbox",
@@ -12716,6 +13688,7 @@
             "ImpactMakeTileSEGS",
             "ImpactMinMax",
             "ImpactNeg",
+            "ImpactNegativeConditioningPlaceholder",
             "ImpactNodeSetMuteState",
             "ImpactQueueTrigger",
             "ImpactQueueTriggerCountdown",
@@ -13036,9 +14009,13 @@
     "https://github.com/matan1905/ComfyUI-Serving-Toolkit": [
         [
             "DiscordServing",
+            "ServingInputImage",
+            "ServingInputImageAsLatent",
             "ServingInputNumber",
             "ServingInputText",
+            "ServingMultiImageOutput",
             "ServingOutput",
+            "ServingTextOutput",
             "WebSocketServing"
         ],
         {
@@ -13091,7 +14068,7 @@
             "DynamicThresholdingSimple"
         ],
         {
-            "title_aux": "Stable Diffusion Dynamic Thresholding (CFG Scale Fix)"
+            "title_aux": "Dynamic Thresholding"
         }
     ],
     "https://github.com/meap158/ComfyUI-Background-Replacement": [
@@ -13337,16 +14314,6 @@
             "title_aux": "ComfyUI - Mask Bounding Box"
         }
     ],
-    "https://github.com/mingqizhang/ComfyUI_InSPyResNet_zmq": [
-        [
-            "INSPY removebg Apply",
-            "INSPY removebg ModelLoader",
-            "INSPY removebg ModelLoaderFromPath"
-        ],
-        {
-            "title_aux": "ComfyUI_InSPyResNet_zmq"
-        }
-    ],
     "https://github.com/mirabarukaso/ComfyUI_Mira": [
         [
             "BooleanListInterpreter1",
@@ -13360,6 +14327,7 @@
             "CreateCircleMask",
             "CreateMaskWithCanvas",
             "CreateNestedPNGMask",
+            "CreatePolygonPNGMask",
             "CreateSimpleMask",
             "CreateTillingPNGMask",
             "CreateWatermarkRemovalMask",
@@ -13399,12 +14367,32 @@
             "TextBox",
             "TextCombinerSix",
             "TextCombinerTwo",
+            "TextSwitcherThreeWays",
+            "TextSwitcherTwoWays",
             "TextWithBooleanSwitchAndCommonTextInput",
             "TwoBooleanTrigger",
             "TwoFloats"
         ],
         {
             "title_aux": "ComfyUI_Mira"
+        }
+    ],
+    "https://github.com/misterjoessef/MLTask_ComfyUI": [
+        [
+            "FacebookPosterData",
+            "InstagramPosterData",
+            "LinkedinPosterData",
+            "MLTaskUtilsTextImageGenerator",
+            "PinterestPosterData",
+            "SocialManMediaToPoster",
+            "SocialManPostData",
+            "SocialManPoster",
+            "TiktokPosterData",
+            "TwitterPosterData",
+            "YoutubePosterData"
+        ],
+        {
+            "title_aux": "MLTask_ComfyUI"
         }
     ],
     "https://github.com/modusCell/ComfyUI-dimension-node-modusCell": [
@@ -13518,6 +14506,34 @@
             "title_aux": "ComfyUI-NegiTools"
         }
     ],
+    "https://github.com/neeltheninja/ComfyUI-TextOverlay": [
+        [
+            "Text Overlay"
+        ],
+        {
+            "title_aux": "ComfyUI-TextOverlay"
+        }
+    ],
+    "https://github.com/neverbiasu/ComfyUI-Image-Captioner": [
+        [
+            "ImageCaptioner"
+        ],
+        {
+            "title_aux": "ComfyUI-Image-Captioner"
+        }
+    ],
+    "https://github.com/neverbiasu/ComfyUI-SAM2": [
+        [
+            "GroundingDinoModelLoader (segment anything)",
+            "GroundingDinoSAMSegment (segment anything)",
+            "InvertMask (segment anything)",
+            "IsMaskEmpty",
+            "SAM2ModelLoader (segment anything)"
+        ],
+        {
+            "title_aux": "ComfyUI SAM2(Segment Anything 2)"
+        }
+    ],
     "https://github.com/nickve28/ComfyUI-Nich-Utils": [
         [
             "Image from Dir Selector (Nich)",
@@ -13590,8 +14606,11 @@
             "PromptUtilitiesJoinStringList",
             "PromptUtilitiesLoadPreset",
             "PromptUtilitiesLoadPresetAdvanced",
+            "PromptUtilitiesPromptWeight",
             "PromptUtilitiesRandomPreset",
-            "PromptUtilitiesRandomPresetAdvanced"
+            "PromptUtilitiesRandomPresetAdvanced",
+            "PromptUtilitiesReplaceOrInsertTag",
+            "PromptUtilitiesRoundPromptWeight"
         ],
         {
             "title_aux": "ComfyUI-PromptUtilities"
@@ -13632,6 +14651,15 @@
         ],
         {
             "title_aux": "ComfyUI-TextOnSegs"
+        }
+    ],
+    "https://github.com/noarche/sd-webui-color-enhance": [
+        [
+            "MMakerColorBlend",
+            "MMakerColorEnhance"
+        ],
+        {
+            "title_aux": "Color Enhance"
         }
     ],
     "https://github.com/noembryo/ComfyUI-noEmbryo": [
@@ -13740,6 +14768,14 @@
         ],
         {
             "title_aux": "ComfyUI-HfLoader"
+        }
+    ],
+    "https://github.com/oleksandr612/ComfyUI-Counter": [
+        [
+            "Simple Counter"
+        ],
+        {
+            "title_aux": "ComfyUI-Counter"
         }
     ],
     "https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92": [
@@ -13887,6 +14923,7 @@
     "https://github.com/pamparamm/ComfyUI-ppm": [
         [
             "AttentionCouplePPM",
+            "CFGLimiterGuider",
             "CFGPPSamplerSelect",
             "CLIPMicroConditioning",
             "CLIPNegPip",
@@ -13916,6 +14953,7 @@
     "https://github.com/pamparamm/sd-perturbed-attention": [
         [
             "PerturbedAttention",
+            "SmoothedEnergyGuidanceAdvanced",
             "TRTAttachPag",
             "TRTPerturbedAttention"
         ],
@@ -13935,14 +14973,18 @@
     "https://github.com/patriciogonzalezvivo/comfyui_glslnodes": [
         [
             "float",
+            "glslBuffers",
             "glslEditor",
-            "glslEditor (ShaderToy)",
+            "glslEditorPro",
             "glslUniforms",
             "glslViewer",
             "int",
             "vec2",
+            "vec2 (pos)",
             "vec3",
-            "vec4"
+            "vec3 (pos)",
+            "vec4",
+            "vec4 (color)"
         ],
         {
             "author": "Patricio Gonzalez Vivo",
@@ -13988,6 +15030,21 @@
             "title_aux": "comfy_PoP"
         }
     ],
+    "https://github.com/pikenrover/ComfyUI_PRNodes": [
+        [
+            "CheckpointLoaderSimpleExtended",
+            "EmptyLatentImageScaleBy",
+            "ImageScaleTo",
+            "LoadRandomImage",
+            "LoraLoaderExtended",
+            "RandomPrompt",
+            "RandomPromptMixed",
+            "Save Image w/Metadata"
+        ],
+        {
+            "title_aux": "ComfyUI_PRNodes"
+        }
+    ],
     "https://github.com/pkpkTech/ComfyUI-SaveAVIF": [
         [
             "SaveAvif"
@@ -14010,6 +15067,7 @@
         [
             "BMAB Alpha Composit",
             "BMAB Basic",
+            "BMAB Black And White",
             "BMAB Blend",
             "BMAB Clip Text Encoder SDXL",
             "BMAB Conditioning To Bind",
@@ -14025,6 +15083,7 @@
             "BMAB Edge",
             "BMAB Extractor",
             "BMAB Face Detailer",
+            "BMAB Flux Integrator",
             "BMAB Google Gemini Prompt",
             "BMAB Import Integrator",
             "BMAB Integrator",
@@ -14043,6 +15102,7 @@
             "BMAB Person Detailer",
             "BMAB Preview Text",
             "BMAB Prompt",
+            "BMAB Remote Access And Save",
             "BMAB Remove Background",
             "BMAB Resize By Person",
             "BMAB Resize By Ratio",
@@ -14057,11 +15117,13 @@
             "BMAB SeedGenerator",
             "BMAB Segment Anything",
             "BMAB Simple Hand Detailer",
+            "BMAB Square",
             "BMAB Subframe Hand Detailer",
             "BMAB Text",
             "BMAB Upscale With Model",
             "BMAB Upscaler",
-            "BMAB Watermark"
+            "BMAB Watermark",
+            "BMAB Zoom Out"
         ],
         {
             "title_aux": "comfyui_bmab"
@@ -14538,6 +15600,9 @@
     ],
     "https://github.com/shadowcz007/comfyui-liveportrait": [
         [
+            "ExpressionEditor_",
+            "ExpressionVideo2VideoNode",
+            "ExpressionVideoNode",
             "FaceCropInfo",
             "LivePortraitNode",
             "LivePortraitVideoNode",
@@ -14559,6 +15624,7 @@
             "Color",
             "ComparingTwoFrames_",
             "CompositeImages_",
+            "DepthViewer",
             "DynamicDelayProcessor",
             "EmbeddingPrompt",
             "EnhanceImage",
@@ -14573,6 +15639,7 @@
             "GridDisplayAndSave",
             "GridInput",
             "GridOutput",
+            "ImageBatchToList_",
             "ImageColorTransfer",
             "ImageCropByAlpha",
             "ImageListToBatch_",
@@ -14580,6 +15647,7 @@
             "IncrementingListNode_",
             "IntNumber",
             "JoinWithDelimiter",
+            "KeyInput",
             "LimitNumber",
             "ListSplit_",
             "LoadImagesFromPath",
@@ -14595,6 +15663,7 @@
             "NewLayer",
             "NoiseImage",
             "OutlineMask",
+            "P5Input",
             "PreviewMask_",
             "PromptImage",
             "PromptSimplification",
@@ -14640,6 +15709,20 @@
             "title_aux": "comfyui-sound-lab"
         }
     ],
+    "https://github.com/shadowcz007/comfyui-try-on": [
+        [
+            "CatVTONNode",
+            "FashionClothMask",
+            "FashionClothMask2"
+        ],
+        {
+            "author": "chflame",
+            "description": "CatVTON warpper for ComfyUI",
+            "nickname": "CatVTON_Wrapper",
+            "title": "CatVTON_Wrapper",
+            "title_aux": "comfyui-try-on"
+        }
+    ],
     "https://github.com/shadowcz007/comfyui-ultralytics-yolo": [
         [
             "DetectByLabel"
@@ -14664,6 +15747,8 @@
     "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus": [
         [
             "PhotoMakerEncodePlus",
+            "PhotoMakerInsightFaceLoader",
+            "PhotoMakerLoaderPlus",
             "PhotoMakerStyles",
             "PrepImagesForClipVisionFromPath"
         ],
@@ -14680,6 +15765,14 @@
         ],
         {
             "title_aux": "Tiled Diffusion & VAE for ComfyUI"
+        }
+    ],
+    "https://github.com/shiimizu/ComfyUI-semantic-aware-guidance": [
+        [
+            "SemanticAwareGuidance"
+        ],
+        {
+            "title_aux": "Semantic-aware Guidance (S-CFG)"
         }
     ],
     "https://github.com/shiimizu/ComfyUI_smZNodes": [
@@ -14706,6 +15799,21 @@
         ],
         {
             "title_aux": "ComfyUI-send-Eagle(slim)"
+        }
+    ],
+    "https://github.com/shinich39/comfyui-pkg39": [
+        [
+            "Command39",
+            "LoadImage39",
+            "Random39",
+            "Textarea39"
+        ],
+        {
+            "author": "shinich39",
+            "description": "Automation for generating image from image.",
+            "nickname": "pkg39",
+            "title": "pkg39",
+            "title_aux": "comfyui-pkg39"
         }
     ],
     "https://github.com/shobhitic/ComfyUI-PlusMinusTextClip": [
@@ -14745,6 +15853,7 @@
     ],
     "https://github.com/siliconflow/BizyAir": [
         [
+            "BizyAirAuraSR",
             "BizyAirBAE_NormalMapPreprocessor",
             "BizyAirBinaryPreprocessor",
             "BizyAirCannyEdgePreprocessor",
@@ -14761,6 +15870,7 @@
             "BizyAirKolorsVAEEncode",
             "BizyAirLeReS_DepthMapPreprocessor",
             "BizyAirLineArtPreprocessor",
+            "BizyAirMZChatGLM3TextEncode",
             "BizyAirM_LSDPreprocessor",
             "BizyAirMetric3D_DepthMapPreprocessor",
             "BizyAirMetric3D_NormalMapPreprocessor",
@@ -14779,6 +15889,7 @@
             "BizyAirTilePreprocessor",
             "BizyAirUniFormer_SemSegPreprocessor",
             "BizyAirZoe_DepthMapPreprocessor",
+            "BizyAir_MinusZoneChatGLM3TextEncode",
             "StableDiffusionXLControlNetUnionPipeline"
         ],
         {
@@ -14896,6 +16007,14 @@
             "title_aux": "kb-comfyui-nodes"
         }
     ],
+    "https://github.com/smlbiobot/ComfyUI-Flux-Replicate-API": [
+        [
+            "SML_FluxPro_Replicate_Standalone"
+        ],
+        {
+            "title_aux": "ComfyUI-Flux-Replicate-API"
+        }
+    ],
     "https://github.com/smthemex/ComfyUI_AnyDoor": [
         [
             "AnyDoor_LoadModel",
@@ -14920,10 +16039,20 @@
     ],
     "https://github.com/smthemex/ComfyUI_CustomNet": [
         [
-            "CustomNet_Plus"
+            "CustomNet_LoadModel",
+            "CustomNet_Sampler"
         ],
         {
             "title_aux": "ComfyUI_CustomNet"
+        }
+    ],
+    "https://github.com/smthemex/ComfyUI_Diffree": [
+        [
+            "Diffree_Model_Loader",
+            "Diffree_Sampler"
+        ],
+        {
+            "title_aux": "ComfyUI_Diffree"
         }
     ],
     "https://github.com/smthemex/ComfyUI_EchoMimic": [
@@ -14933,6 +16062,15 @@
         ],
         {
             "title_aux": "ComfyUI_EchoMimic"
+        }
+    ],
+    "https://github.com/smthemex/ComfyUI_FoleyCrafter": [
+        [
+            "FoleyCrafter_LoadModel",
+            "FoleyCrafter_Sampler"
+        ],
+        {
+            "title_aux": "ComfyUI_FoleyCrafter"
         }
     ],
     "https://github.com/smthemex/ComfyUI_FollowYourEmoji": [
@@ -14976,7 +16114,7 @@
     ],
     "https://github.com/smthemex/ComfyUI_MS_Diffusion": [
         [
-            "MS_Comic_Type",
+            "MS_Object_img_Batch",
             "MSdiffusion_Model_Loader",
             "MSdiffusion_Sampler"
         ],
@@ -14986,7 +16124,8 @@
     ],
     "https://github.com/smthemex/ComfyUI_ParlerTTS": [
         [
-            "PromptToAudio"
+            "ParlerTTS_LoadModel",
+            "ParlerTTS_Sampler"
         ],
         {
             "title_aux": "ComfyUI_ParlerTTS"
@@ -14994,7 +16133,8 @@
     ],
     "https://github.com/smthemex/ComfyUI_Pic2Story": [
         [
-            "Pic2Story"
+            "Pic2Story_Loader",
+            "Pic2Story_Sampler"
         ],
         {
             "title_aux": "ComfyUI_Pic2Story"
@@ -15010,9 +16150,8 @@
     ],
     "https://github.com/smthemex/ComfyUI_Pops": [
         [
-            "Imgae_To_Path",
-            "Pops_Prior_Embedding",
-            "Pops_Repo_Choice",
+            "Pops_Decoder",
+            "Pops_Repo_Loader",
             "Pops_Sampler"
         ],
         {
@@ -15021,8 +16160,8 @@
     ],
     "https://github.com/smthemex/ComfyUI_StableAudio_Open": [
         [
-            "StableAudio_Open",
-            "Use_LocalModel_Or_Repo"
+            "StableAudio_ModelLoader",
+            "StableAudio_Sampler"
         ],
         {
             "title_aux": "ComfyUI_StableAudio_Open"
@@ -15041,6 +16180,7 @@
     "https://github.com/smthemex/ComfyUI_StoryDiffusion": [
         [
             "Comic_Type",
+            "FLUX_Dev_Model_Loader",
             "Pre_Translate_prompt",
             "Storydiffusion_Model_Loader",
             "Storydiffusion_Sampler"
@@ -15051,6 +16191,7 @@
     ],
     "https://github.com/smthemex/ComfyUI_Streamv2v_Plus": [
         [
+            "Stream_Lora_Loader",
             "Stream_Model_Loader",
             "Stream_Sampler"
         ],
@@ -15150,7 +16291,9 @@
             "BlurMaskFast",
             "ClampOutliers",
             "ColorMatchImage",
+            "ConditioningSubtract",
             "ConvertNormals",
+            "CustomNoise",
             "DepthToNormals",
             "DifferenceChecker",
             "DilateErodeMask",
@@ -15169,6 +16312,7 @@
             "LatentNormalizeShuffle",
             "LatentStats",
             "MedianFilterImage",
+            "ModelTest",
             "NormalMapSimple",
             "OffsetLatentImage",
             "PrintSigmas",
@@ -15288,6 +16432,8 @@
         [
             "OllamaGenerate",
             "OllamaGenerateAdvance",
+            "OllamaLoadContext",
+            "OllamaSaveContext",
             "OllamaVision"
         ],
         {
@@ -15372,6 +16518,48 @@
         ],
         {
             "title_aux": "comfyui_lumaAPI"
+        }
+    ],
+    "https://github.com/syaofox/ComfyUI_FoxTools": [
+        [
+            "FoxBatchImageFromList",
+            "FoxColorMatch",
+            "FoxCreateBlurBord",
+            "FoxCreateFaceMask",
+            "FoxFaceAlign",
+            "FoxFaceAlignCacul",
+            "FoxFaceAlignSimple",
+            "FoxFaceAnalysisModels",
+            "FoxFaceBoundingBox",
+            "FoxFaceEmbedDistance",
+            "FoxFaceOcclusionModelLoader",
+            "FoxFaceSegmentation",
+            "FoxFaceShaper",
+            "FoxFaceShaperModels",
+            "FoxFaceWarp",
+            "FoxGenSwapPathText",
+            "FoxGrowMaskWithBlur",
+            "FoxImageAdd",
+            "FoxImageConcanate",
+            "FoxImageExtractFromBatch",
+            "FoxImageResizeBySpecialSide",
+            "FoxImageRotate",
+            "FoxImageTileBatch",
+            "FoxLoadImageBatch",
+            "FoxLoadImageList",
+            "FoxPreviewMask",
+            "FoxPrimitiveText",
+            "FoxRegTextFind",
+            "FoxSDXLPromptStyler",
+            "FoxSDXLPromptStylerAdvanced",
+            "FoxSaveImagePlus",
+            "FoxShowText",
+            "FoxTextConcatenate",
+            "FoxTrimBlackBoard",
+            "FoxcleanGPUUsed"
+        ],
+        {
+            "title_aux": "ComfyUI_FoxTools"
         }
     ],
     "https://github.com/syllebra/bilbox-comfyui": [
@@ -15629,6 +16817,7 @@
     "https://github.com/toyxyz/ComfyUI_toyxyz_test_nodes": [
         [
             "CaptureWebcam",
+            "Direct Screen Capture",
             "ImageResize_Padding",
             "LatentDelay",
             "LoadWebcamImage",
@@ -15832,15 +17021,30 @@
         [
             "ChannelSelector",
             "DownloadAndLoadFlorence2Model",
+            "FetchFromRedis",
             "FetchJsonFromSurreal",
             "Florence2Run",
             "ForegroundMask",
             "MaskImage",
+            "SaveImageToS3",
             "SaveJsonToSurreal",
-            "SaveTextToSurreal"
+            "SaveTextToSurreal",
+            "SaveToRedis"
         ],
         {
             "title_aux": "comfyui-tensorop"
+        }
+    ],
+    "https://github.com/un-seen/comfyui_segment_anything_plus": [
+        [
+            "GroundingDinoModelLoader (segment anything plus)",
+            "GroundingDinoSAMSegment (segment anything plus)",
+            "InvertMask (segment anything plus)",
+            "IsMaskEmpty  (segment anything plus)",
+            "SAMModelLoader (segment anything plus)"
+        ],
+        {
+            "title_aux": "ComfyUI Segment Anything"
         }
     ],
     "https://github.com/unwdef/unwdef-nodes-comfyui": [
@@ -15881,6 +17085,22 @@
             "nickname": "Simple Wildcard",
             "title": "Simple Wildcard",
             "title_aux": "Simple Wildcard"
+        }
+    ],
+    "https://github.com/var1ableX/ComfyUI_Accessories": [
+        [
+            "GetMaskDimensions"
+        ],
+        {
+            "title_aux": "ComfyUI_Accessories"
+        }
+    ],
+    "https://github.com/vault-developer/comfyui-image-blender": [
+        [
+            "ImageBlender"
+        ],
+        {
+            "title_aux": "ImageBlender"
         }
     ],
     "https://github.com/veighnsche/comfyui_gr85": [
@@ -15998,6 +17218,8 @@
     ],
     "https://github.com/wTechArtist/ComfyUI-CustomNodes": [
         [
+            "GPT4 WWL",
+            "IPAdapter FaceID With Bool",
             "IPAdapter Mad Scientist Weight_Type",
             "Image Blending Mode Mask",
             "Load Image With Bool"
@@ -16059,6 +17281,14 @@
         ],
         {
             "title_aux": "ComfyUI Invisible Watermark"
+        }
+    ],
+    "https://github.com/webfiltered/DebugNode-ComfyUI": [
+        [
+            "WTFDebugNode"
+        ],
+        {
+            "title_aux": "WTF? - a debug node for ComfyUI"
         }
     ],
     "https://github.com/whatbirdisthat/cyberdolphin": [
@@ -16285,7 +17515,8 @@
     "https://github.com/ycchanau/ComfyUI_Preview_Magnifier": [
         [
             "YC.ImageComparerMagnifier",
-            "YC.PreviewImageMagnifier"
+            "YC.PreviewImageMagnifier",
+            "YC.XYPreviewImageMagnifier"
         ],
         {
             "title_aux": "ComfyUI Preview Magnifier"
@@ -16302,11 +17533,24 @@
     ],
     "https://github.com/yiwangsimple/ComfyUI_GroqChat": [
         [
+            "DeepSeekChatNode",
+            "DeepSeekTranslator",
+            "ErrorLogNode",
+            "ExecutionTime",
             "FileBasedChatNode",
+            "Gemma2PromptNode",
+            "GemmaDialogueNode",
+            "GithubLinkNode",
             "GroqChatNode",
             "MoonshotMultiChatNode",
             "MoonshotSingleChatNode",
-            "SD3LongCaptionerV2"
+            "OllamaImageToText",
+            "OllamaPromptExtractor",
+            "OllamaTextToText",
+            "PromptExtractorNode",
+            "SD3LongCaptionerV2",
+            "SDPromptAgent",
+            "dwimage2"
         ],
         {
             "title_aux": "comfy-groqchat"
@@ -16399,6 +17643,7 @@
             "easy ipadapterApplyADV",
             "easy ipadapterApplyEmbeds",
             "easy ipadapterApplyEncoder",
+            "easy ipadapterApplyFaceIDKolors",
             "easy ipadapterApplyFromParams",
             "easy ipadapterApplyRegional",
             "easy ipadapterStyleComposition",
@@ -16418,6 +17663,7 @@
             "easy negative",
             "easy pipeBatchIndex",
             "easy pipeEdit",
+            "easy pipeEditPrompt",
             "easy pipeIn",
             "easy pipeOut",
             "easy pipeToBasicPipe",
@@ -16716,11 +17962,14 @@
             "LoadImageWithoutListDir",
             "MaskAutoSelector",
             "MaskFastGrow",
+            "MatchImageRatioToPreset",
             "ModifyTextGender",
-            "SplitMask"
+            "SplitMask",
+            "TextPreview",
+            "UpscaleImageWithModelIfNeed"
         ],
         {
-            "title_aux": "zhangp365/Some Utils for ComfyUI"
+            "title_aux": "zhangp365/ComfyUI-utils-nodes"
         }
     ],
     "https://github.com/zhongpei/ComfyUI-InstructIR": [
@@ -16769,6 +18018,7 @@
     "https://github.com/zhulu111/ComfyUI_Bxb": [
         [
             "sdBxb",
+            "sdBxb_saveImage",
             "sdBxb_textInput"
         ],
         {

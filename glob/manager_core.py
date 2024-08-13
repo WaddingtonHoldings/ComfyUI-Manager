@@ -24,7 +24,7 @@ sys.path.append(glob_path)
 import cm_global
 from manager_util import *
 
-version = [2, 48]
+version = [2, 48, 6]
 version_str = f"V{version[0]}.{version[1]}" + (f'.{version[2]}' if len(version) > 2 else '')
 
 
@@ -98,7 +98,7 @@ def clear_pip_cache():
 def is_blacklisted(name):
     name = name.strip()
 
-    pattern = r'([^<>!=]+)([<>!=]=?)(.*)'
+    pattern = r'([^<>!=]+)([<>!=]=?)([^ ]*)'
     match = re.search(pattern, name)
 
     if match:
@@ -124,7 +124,7 @@ def is_installed(name):
     if name.startswith('#'):
         return True
 
-    pattern = r'([^<>!=]+)([<>!=]=?)(.*)'
+    pattern = r'([^<>!=]+)([<>!=]=?)([^ ]*)'
     match = re.search(pattern, name)
 
     if match:
@@ -406,8 +406,14 @@ def execute_install_script(url, repo_path, lazy_mode=False, instant_execution=Fa
             with open(requirements_path, "r") as requirements_file:
                 for line in requirements_file:
                     package_name = remap_pip_package(line.strip())
+
                     if package_name and not package_name.startswith('#'):
-                        install_cmd = [sys.executable, "-m", "pip", "install", package_name]
+                        if '--index-url' in package_name:
+                            s = package_name.split('--index-url')
+                            install_cmd = [sys.executable, "-m", "pip", "install", s[0].strip(), '--index-url', s[1].strip()]
+                        else:
+                            install_cmd = [sys.executable, "-m", "pip", "install", package_name]
+
                         if package_name.strip() != "" and not package_name.startswith('#'):
                             try_install_script(url, repo_path, install_cmd, instant_execution=instant_execution)
 
@@ -1227,4 +1233,5 @@ def unzip(model_path):
 
     os.remove(model_path)
     return True
+
 
