@@ -11,6 +11,179 @@
 
 
 
+
+
+
+        {
+            "author": "Looking-Glass",
+            "title": "LKG-ComfyUI",
+            "reference": "https://github.com/Looking-Glass/LKG-ComfyUI",
+            "files": [
+                "https://github.com/Looking-Glass/LKG-ComfyUI"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:Side by Side Node, Bridge Preview Node, Load Folder, Scale Maintain Aspect Ratio Node, "
+        },
+        {
+            "author": "xiaoyumu",
+            "title": "ComfyUI-XYNodes",
+            "reference": "https://github.com/xiaoyumu/ComfyUI-XYNodes",
+            "files": [
+                "https://github.com/xiaoyumu/ComfyUI-XYNodes"
+            ],
+            "install_type": "git-clone",
+            "description": "Nodes:PrimitiveBBOX."
+        },
+        {
+            "author": "ainanoha",
+            "title": "etm_comfyui_nodes",
+            "reference": "https://github.com/ainanoha/etm_comfyui_nodes",
+            "files": [
+                "https://github.com/ainanoha/etm_comfyui_nodes"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:LETM Save Image, ETM Load Image From Local"
+        },
+        {
+            "author": "oshtz",
+            "title": "ComfyUI-oshtz-nodes [WIP]",
+            "reference": "https://github.com/oshtz/ComfyUI-oshtz-nodes",
+            "files": [
+                "https://github.com/oshtz/ComfyUI-oshtz-nodes"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:LoRASwitcherNode, LoRASwitcherNode20, LoRASwitcherNode40, LLMAIONode, ImageOverlayNode, StringSplitterNode\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "DoctorDiffusion",
+            "title": "DoctorDiffusion [WIP]",
+            "reference": "https://github.com/DoctorDiffusion/Doctor-Tools",
+            "files": [
+                "https://github.com/DoctorDiffusion/Doctor-Tools"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:Final Frame Selector, Video Merge.\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "m-ai-studio",
+            "title": "mai-prompt-progress",
+            "reference": "https://github.com/m-ai-studio/mai-prompt-progress",
+            "files": [
+                "https://github.com/m-ai-studio/mai-prompt-progress"
+            ],
+            "install_type": "git-clone",
+            "description": "mai-prompt-progress"
+        },
+        {
+            "author": "neeltheninja",
+            "title": "ComfyUI-TempFileDeleter [UNSAFE]",
+            "reference": "https://github.com/neeltheninja/ComfyUI-TempFileDeleter",
+            "files": [
+                "https://github.com/neeltheninja/ComfyUI-TempFileDeleter"
+            ],
+            "install_type": "git-clone",
+            "description": "This node is designed to streamline your workflow in ComfyUI by efficiently cleaning up temporary files on each run. This node takes no input. You can specify 'on' or 'off' in the node itself, or just bypass to not use use it.[w/This node can delete any files in the folder mentioned in 'folder_path' in the node. Be aware of this and change the folder path correctly before running any workflow with this node. I will NOT be responsible for wrongly deleted files because you didn't read this beforehand.]"
+        },
+        {
+            "author": "kylegrover",
+            "title": "ComfyUI-MochiWrapper [UNSAFE]",
+            "reference": "https://github.com/kylegrover/comfyui-python-cowboy",
+            "files": [
+                "https://github.com/kylegrover/comfyui-python-cowboy"
+            ],
+            "install_type": "git-clone",
+            "description": "run python code in comfyui\nuses codemirror for nice syntax highlighting\nNOTE: based on ComfyUI-nidefawl[w/This node is an unsafe node that includes the capability to execute arbitrary python script.]"
+        },
+        {
+            "author": "kijai",
+            "title": "ComfyUI-MochiWrapper [WIP]",
+            "reference": "https://github.com/kijai/ComfyUI-MochiWrapper",
+            "files": [
+                "https://github.com/kijai/ComfyUI-MochiWrapper"
+            ],
+            "install_type": "git-clone",
+            "description": "ComfyUI wrapper nodes for [a/Mochi](https://github.com/genmoai/models) video generator"
+        },
+        {
+            "author": "kk8bit",
+            "title": "KayTool",
+            "reference": "https://github.com/kk8bit/KayTool",
+            "files": [
+                "https://github.com/kk8bit/KayTool"
+            ],
+            "install_type": "git-clone",
+            "description": "KayTool is a custom node utility package developed for ComfyUI. I plan to add more features in the future."
+        },
+        {
+            "author": "leadbreak",
+            "title": "Face Aging [WIP]",
+            "reference": "https://github.com/leadbreak/comfyui-faceaging",
+            "files": [
+                "https://github.com/leadbreak/comfyui-faceaging"
+            ],
+            "install_type": "git-clone",
+            "description": "This is a comfyui custom node version of [a/Age Transformation](https://github.com/yuval-alaluf/SAM).\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "downlifted",
+            "title": "ComfyUI_BWiZ_Nodes [WIP]",
+            "reference": "https://github.com/downlifted/ComfyUI_BWiZ_Nodes",
+            "files": [
+                "https://github.com/downlifted/ComfyUI_BWiZ_Nodes"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:CaptainWebhook, CaptainWebhook-Email, CaptainWebhook-Push, BWIZ_AdvancedLoadImageBatch, BWIZ_ErrorDetector, BWIZ_HFRepoBatchLoader, BWIZ_NotificationSound.\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "Poukpalaova",
+            "title": "ComfyUI-FRED-Nodes [WIP]",
+            "reference": "https://github.com/Poukpalaova/ComfyUI-FRED-Nodes",
+            "files": [
+                "https://github.com/Poukpalaova/ComfyUI-FRED-Nodes"
+            ],
+            "install_type": "git-clone",
+            "description": "This repository contains custom nodes for ComfyUI. This is a work in progress (WIP).\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "blurymind",
+            "title": "cozy-fireplace [WIP]",
+            "reference": "https://github.com/blurymind/cozy-fireplace",
+            "files": [
+                "https://github.com/blurymind/cozy-fireplace"
+            ],
+            "install_type": "git-clone",
+            "description": "Cozy fireplace is a ComfyUI workflow prompter that brings a localhost server frontend for existing workflows created in ComfyUi. Just place your favorite or lovingly crafted workflows in a folder and cozy fireplace will let you select and run any of them (export them as API type in comfyui) It's a cozy UI that scales all the way down to mobile phone devices - to let you prompt your beefy pc at home with your smartphone."
+        },
+        {
+            "author": "lordwedggie",
+            "title": "xcpNodes [WIP]",
+            "reference": "https://github.com/lordwedggie/xcpNodes",
+            "files": [
+                "https://github.com/lordwedggie/xcpNodes"
+            ],
+            "install_type": "git-clone",
+            "description": "Slider nodes based on Smirnov75's codes [a/https://github.com/Smirnov75/ComfyUI-mxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)\nNOTE: The files in the repo are not organized."
+        },
+        {
+            "author": "kxh",
+            "title": "ComfyUI-ImageUpscaleWithModelMultipleTimes",
+            "reference": "https://github.com/kxh/ComfyUI-ImageUpscaleWithModelMultipleTimes",
+            "files": [
+                "https://github.com/kxh/ComfyUI-ImageUpscaleWithModelMultipleTimes"
+            ],
+            "install_type": "git-clone",
+            "description": "Upscale image with model multiple times !"
+        },
+        {
+            "author": "huangyangke",
+            "title": "ComfyUI-Kolors-IpadapterFaceId [WIP]",
+            "reference": "https://github.com/huangyangke/ComfyUI-Kolors-IpadapterFaceId",
+            "files": [
+                "https://github.com/huangyangke/ComfyUI-Kolors-IpadapterFaceId"
+            ],
+            "install_type": "git-clone",
+            "description": "NODES:kolors_ipadapter_faceid\nNOTE: The files in the repo are not organized."
+        },
         {
             "author": "rouxianmantou",
             "title": "comfyui-rxmt-nodes",
@@ -20,16 +193,6 @@
             ],
             "install_type": "git-clone",
             "description": "NODES:Check Value Type"
-        },
-        {
-            "author": "Firetheft",
-            "title": "ComfyUI-Flux-Prompt-Tools",
-            "reference": "https://github.com/Firetheft/ComfyUI-Flux-Prompt-Tools",
-            "files": [
-                "https://github.com/Firetheft/ComfyUI-Flux-Prompt-Tools"
-            ],
-            "install_type": "git-clone",
-            "description": "NODES:flux-prompt-enhance-node, flux-prompt-generator, flux-prompt-gemini-flash-node"
         },
         {
             "author": "SirVeggie",
@@ -52,16 +215,6 @@
             "description": "NODES:Random Video Mixer, Spotify Canvas Generator, Video Writer\ncustom comfyui nodes for audio/visual purposes# ComfyUI-Custom-Nodes"
         },
         {
-            "author": "taches-ai",
-            "title": "ComfyUI Scene Composer [WIP]",
-            "reference": "https://github.com/taches-ai/comfyui-scene-composer",
-            "files": [
-                "https://github.com/taches-ai/comfyui-scene-composer"
-            ],
-            "install_type": "git-clone",
-            "description": "A collection of nodes to facilitate the creation of scenes in ComfyUI."
-        },
-        {
             "author": "kxh",
             "title": "ComfyUI-sam2",
             "reference": "https://github.com/kxh/ComfyUI-sam2",
@@ -73,7 +226,7 @@
         },
         {
             "author": "AIFSH",
-            "title": "UtilNodes-ComfyUI",
+            "title": "UtilNodes-ComfyUI [WIP]",
             "reference": "https://github.com/AIFSH/UtilNodes-ComfyUI",
             "files": [
                 "https://github.com/AIFSH/UtilNodes-ComfyUI"
@@ -83,7 +236,7 @@
         },
         {
             "author": "dafeng012",
-            "title": "comfyui-imgmake",
+            "title": "comfyui-imgmake [WIP]",
             "reference": "https://github.com/dafeng012/comfyui-imgmake",
             "files": [
                 "https://github.com/dafeng012/comfyui-imgmake"
@@ -163,7 +316,7 @@
         },
         {
             "author": "monate0615",
-            "title": "Affine Transform ComfyUI Node",
+            "title": "Affine Transform ComfyUI Node [WIP]",
             "reference": "https://github.com/monate0615/ComfyUI-Affine-Transform",
             "files": [
                 "https://github.com/monate0615/ComfyUI-Affine-Transform"
@@ -366,7 +519,7 @@
         },
         {
             "author": "shadowcz007",
-            "title": "Comfyui-EzAudio",
+            "title": "Comfyui-EzAudio [WIP]",
             "reference": "https://github.com/shadowcz007/Comfyui-EzAudio",
             "files": [
                 "https://github.com/shadowcz007/Comfyui-EzAudio"
@@ -516,7 +669,7 @@
         },
         {
             "author": "Lilien86",
-            "title": "lauger NodePack for ComfyUI",
+            "title": "lauger NodePack for ComfyUI [WIP]",
             "reference": "https://github.com/Lilien86/Comfyui_Lilien",
             "files": [
                 "https://github.com/Lilien86/Comfyui_Lilien"
@@ -1592,7 +1745,7 @@
                 "https://github.com/flyingdogsoftware/gyre_for_comfyui"
             ],
             "install_type": "git-clone",
-            "description": "Nodes:GyreLoopStart, GyreLoopEnd, GyreIfElse"
+            "description": "Nodes:BackgroundRemoval, GyreLoopStart, GyreLoopEnd, GyreIfElse"
         },
         {
             "author": "githubYiheng",
