@@ -22,6 +22,7 @@ import yaml
 import zipfile
 import traceback
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from git import GitCommandError
 
 orig_print = print
 
@@ -1184,7 +1185,7 @@ class UnifiedManager:
 
         return result
 
-    def repo_install(self, url, repo_path, instant_execution=False, no_deps=False, return_postinstall=False):
+    def repo_install(self, url, repo_path, instant_execution=False, no_deps=False, return_postinstall=False, retries=3):
         result = ManagedResult('install-git')
         result.append(url)
 
@@ -1202,9 +1203,19 @@ class UnifiedManager:
                 if res != 0:
                     return result.fail(f"Failed to clone repo: {url}")
             else:
-                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress())
-                repo.git.clear_cache()
-                repo.close()
+                retry_count = retries
+                while retry_count > 0:
+                    try:
+                        repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
+                        repo.git.clear_cache()
+                        repo.close()
+                        break
+                    except GitCommandError as e:
+                        retry_count -= 1
+                        if retry_count == 0:
+                            return result.fail(f"Failed to clone after {retries} attempts: {url} / {e}")
+                        print(f"Clone failed, retrying ({retry_count} attempts remaining)...")
+                        time.sleep(3)  # Wait 3 seconds before retrying
 
             def postinstall():
                 return self.execute_install_script(url, repo_path, instant_execution=instant_execution, no_deps=no_deps)
@@ -1936,7 +1947,7 @@ def is_valid_url(url):
     return False
 
 
-async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=False):
+async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=False, retries=3):
     await unified_manager.reload('cache')
     await unified_manager.get_custom_nodes('default', 'cache')
 
@@ -1984,9 +1995,19 @@ async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=
                 if res != 0:
                     return result.fail(f"Failed to clone '{url}' into  '{repo_path}'")
             else:
-                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress())
-                repo.git.clear_cache()
-                repo.close()
+                retry_count = retries
+                while retry_count > 0:
+                    try:
+                        repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
+                        repo.git.clear_cache()
+                        repo.close()
+                        break
+                    except GitCommandError as e:
+                        retry_count -= 1
+                        if retry_count == 0:
+                            return result.fail(f"Failed to clone after {retries} attempts: {url} / {e}")
+                        print(f"Clone failed, retrying ({retry_count} attempts remaining)...")
+                        time.sleep(3)  # Wait 3 seconds before retrying
 
             execute_install_script(url, repo_path, instant_execution=instant_execution, no_deps=no_deps)
             print("Installation was successful.")
