@@ -4,23 +4,82 @@ from typing import List
 import manager_util
 import toml
 import os
+import asyncio
+import json
+import time
 
 base_url = "https://api.comfy.org"
 
 
-async def get_cnr_data(page=1, limit=1000, cache_mode=True):
-    try:
-        uri = f'{base_url}/nodes?page={page}&limit={limit}'
-        json_obj = await manager_util.get_data_with_cache(uri, cache_mode=cache_mode)
+lock = asyncio.Lock()
 
-        for v in json_obj['nodes']:
+is_cache_loading = False
+
+async def get_cnr_data(cache_mode=True, dont_wait=True):
+    try:
+        return await _get_cnr_data(cache_mode, dont_wait)
+    except asyncio.TimeoutError:
+        print("A timeout occurred during the fetch process from ComfyRegistry.")
+        return await _get_cnr_data(cache_mode=True, dont_wait=True)  # timeout fallback
+
+async def _get_cnr_data(cache_mode=True, dont_wait=True):
+    global is_cache_loading
+
+    uri = f'{base_url}/nodes'
+
+    async def fetch_all():
+        remained = True
+        page = 1
+
+        full_nodes = {}
+        while remained:
+            sub_uri = f'{base_url}/nodes?page={page}&limit=30'
+            sub_json_obj = await asyncio.wait_for(manager_util.get_data_with_cache(sub_uri, cache_mode=False, silent=True), timeout=30)
+            remained = page < sub_json_obj['totalPages']
+
+            for x in sub_json_obj['nodes']:
+                full_nodes[x['id']] = x
+
+            if page % 5 == 0:
+                print(f"FETCH ComfyRegistry Data: {page}/{sub_json_obj['totalPages']}")
+
+            page += 1
+            time.sleep(0.5)
+
+        print("FETCH ComfyRegistry Data [DONE]")
+
+        for v in full_nodes.values():
             if 'latest_version' not in v:
                 v['latest_version'] = dict(version='nightly')
 
+        return {'nodes': list(full_nodes.values())}
+
+    if cache_mode:
+        is_cache_loading = True
+        cache_state = manager_util.get_cache_state(uri)
+
+        if dont_wait:
+            if cache_state == 'not-cached':
+                return {}
+            else:
+                print("[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.")
+                with open(manager_util.get_cache_path(uri), 'r', encoding="UTF-8", errors="ignore") as json_file:
+                    return json.load(json_file)['nodes']
+
+        if cache_state == 'cached':
+            with open(manager_util.get_cache_path(uri), 'r', encoding="UTF-8", errors="ignore") as json_file:
+                return json.load(json_file)['nodes']
+
+    try:
+        json_obj = await fetch_all()
+        manager_util.save_to_cache(uri, json_obj)
         return json_obj['nodes']
     except:
         res = {}
         print("Cannot connect to comfyregistry.")
+    finally:
+        if cache_mode:
+            is_cache_loading = False
 
     return res
 
@@ -92,7 +151,7 @@ def install_node(node_id, version=None):
 
 
 def all_versions_of_node(node_id):
-    url = f"https://api.comfy.org/nodes/{node_id}/versions?statuses=NodeVersionStatusActive&statuses=NodeVersionStatusPending"
+    url = f"{base_url}/nodes/{node_id}/versions?statuses=NodeVersionStatusActive&statuses=NodeVersionStatusPending"
 
     response = requests.get(url)
     if response.status_code == 200:
@@ -113,7 +172,7 @@ def read_cnr_info(fullpath):
             data = toml.load(f)
 
             project = data.get('project', {})
-            name = project.get('name')
+            name = project.get('name').strip().lower()
             version = project.get('version')
 
             urls = project.get('urls', {})

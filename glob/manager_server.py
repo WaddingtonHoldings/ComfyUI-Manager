@@ -566,7 +566,7 @@ async def fetch_customnode_list(request):
     else:
         channel = core.get_config()['channel_url']
 
-    node_packs = await core.get_unified_total_nodes(channel, request.rel_url.query["mode"])
+    node_packs = await core.get_unified_total_nodes(channel, request.rel_url.query["mode"], 'cache')
     json_obj_github = core.get_data_by_mode(request.rel_url.query["mode"], 'github-stats.json', 'default')
     json_obj_extras = core.get_data_by_mode(request.rel_url.query["mode"], 'extras.json', 'default')
 
@@ -839,6 +839,23 @@ async def get_disabled_versions(request):
     return web.Response(status=400)
 
 
+@routes.post("/customnode/import_fail_info")
+async def import_fail_info(request):
+    json_data = await request.json()
+
+    if 'cnr_id' in json_data:
+        module_name = core.unified_manager.get_module_name(json_data['cnr_id'])
+    else:
+        module_name = core.unified_manager.get_module_name(json_data['url'])
+
+    if module_name is not None:
+        info = cm_global.error_dict.get(module_name)
+        if info is not None:
+            return web.json_response(info)
+
+    return web.Response(status=400)
+
+
 @routes.post("/customnode/reinstall")
 async def reinstall_custom_node(request):
     await uninstall_custom_node(request)
@@ -867,7 +884,7 @@ async def install_custom_node(request):
             node_spec_str = f"{cnr_id}@{selected_version}"
         else:
             node_spec_str = f"{cnr_id}@nightly"
-            git_url = [json_data.get('reference')]
+            git_url = [json_data.get('repository')]
             if git_url is None:
                 logging.error(f"[ComfyUI-Manager] Following node pack doesn't provide `nightly` version: ${git_url}")
                 return web.Response(status=404, text=f"Following node pack doesn't provide `nightly` version: ${git_url}")
@@ -928,6 +945,8 @@ async def fix_custom_node(request):
     if res.result:
         logging.info("\nAfter restarting ComfyUI, please refresh the browser.")
         return web.json_response({}, content_type='application/json')
+    else:
+        logging.error(res.msg)
 
     logging.error(f"\nERROR: An error occurred while fixing '{node_name}@{node_ver}'.")
     return web.Response(status=400, text=f"An error occurred while fixing '{node_name}@{node_ver}'.")
@@ -1415,8 +1434,8 @@ async def default_cache_update():
     await asyncio.gather(a, b, c, d, e)
 
     # load at least once
-    await core.unified_manager.reload('cache')
-    await core.unified_manager.get_custom_nodes('default', 'cache')
+    await core.unified_manager.reload('remote', dont_wait=False)
+    await core.unified_manager.get_custom_nodes('default', 'remote')
 
     # NOTE: hide migration button temporarily.
     # if not core.get_config()['skip_migration_check']:
@@ -1436,4 +1455,5 @@ cm_global.register_extension('ComfyUI-Manager',
                                  'name': 'ComfyUI Manager',
                                  'nodes': {},
                                  'description': 'This extension provides the ability to manage custom nodes in ComfyUI.', })
+
 

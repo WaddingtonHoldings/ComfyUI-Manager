@@ -42,7 +42,7 @@ import manager_downloader
 from node_package import InstalledNodePackage
 
 
-version_code = [3, 6, 5]
+version_code = [3, 9, 2]
 version_str = f"V{version_code[0]}.{version_code[1]}" + (f'.{version_code[2]}' if len(version_code) > 2 else '')
 
 
@@ -122,7 +122,6 @@ def check_invalid_nodes():
         for subdir in subdirs:
             if subdir in ['.disabled', '__pycache__']:
                 continue
-
 
             package = unified_manager.installed_node_packages.get(subdir)
             if not package:
@@ -234,7 +233,7 @@ def remap_pip_package(pkg):
 def is_blacklisted(name):
     name = name.strip()
 
-    pattern = r'([^<>!=]+)([<>!=]=?)([^ ]*)'
+    pattern = r'([^<>!~=]+)([<>!~=]=?)([^ ]*)'
     match = re.search(pattern, name)
 
     if match:
@@ -249,7 +248,7 @@ def is_blacklisted(name):
         if match is None:
             if name in pips:
                 return True
-        elif match.group(2) in ['<=', '==', '<']:
+        elif match.group(2) in ['<=', '==', '<', '~=']:
             if name in pips:
                 if manager_util.StrictVersion(pips[name]) >= manager_util.StrictVersion(match.group(3)):
                     return True
@@ -263,7 +262,7 @@ def is_installed(name):
     if name.startswith('#'):
         return True
 
-    pattern = r'([^<>!=]+)([<>!=]=?)([0-9.a-zA-Z]*)'
+    pattern = r'([^<>!~=]+)([<>!~=]=?)([0-9.a-zA-Z]*)'
     match = re.search(pattern, name)
 
     if match:
@@ -369,6 +368,16 @@ class UnifiedManager:
         self.custom_node_map_cache = {}    # (channel, mode) -> augmented custom node list json
         self.processed_install = set()
 
+    def get_module_name(self, x):
+        info = self.active_nodes.get(x)
+        if info is None:
+            for url, fullpath in self.unknown_active_nodes.values():
+                if url == x:
+                    return os.path.basename(fullpath)
+        else:
+            return os.path.basename(info[1])
+
+        return None
 
     def get_cnr_by_repo(self, url):
         return self.repo_cnr_map.get(git_utils.normalize_url(url))
@@ -502,18 +511,18 @@ class UnifiedManager:
         self.installed_node_packages[node_package.id] = node_package
 
         if node_package.is_disabled and node_package.is_unknown:
-            # NOTE: unknown package does not have an url.
-            self.unknown_inactive_nodes[node_package.id] = ('', node_package.fullpath)
+            url = git_utils.git_url(node_package.fullpath)
+            self.unknown_inactive_nodes[node_package.id] = (url, node_package.fullpath)
 
         if node_package.is_disabled and node_package.is_nightly:
             self.nightly_inactive_nodes[node_package.id] = node_package.fullpath
 
-        if node_package.is_enabled:
+        if node_package.is_enabled and not node_package.is_unknown:
             self.active_nodes[node_package.id] = node_package.version, node_package.fullpath
 
         if node_package.is_enabled and node_package.is_unknown:
-            # NOTE: unknown package does not have an url.
-            self.unknown_active_nodes[node_package.id] = ('', node_package.fullpath)
+            url = git_utils.git_url(node_package.fullpath)
+            self.unknown_active_nodes[node_package.id] = (url, node_package.fullpath)
 
         if node_package.is_from_cnr and node_package.is_disabled:
             self.add_to_cnr_inactive_nodes(node_package.id, node_package.version, node_package.fullpath)
@@ -665,7 +674,7 @@ class UnifiedManager:
 
         return latest
 
-    async def reload(self, cache_mode):
+    async def reload(self, cache_mode, dont_wait=True):
         self.custom_node_map_cache = {}
         self.cnr_inactive_nodes = {}      # node_id -> node_version -> fullpath
         self.nightly_inactive_nodes = {}  # node_id -> fullpath
@@ -674,11 +683,10 @@ class UnifiedManager:
         self.active_nodes = {}            # node_id -> node_version * fullpath
 
         # reload 'cnr_map' and 'repo_cnr_map'
-        cnrs = await cnr_utils.get_cnr_data(cache_mode=cache_mode)
+        cnrs = await cnr_utils.get_cnr_data(cache_mode=cache_mode=='cache', dont_wait=dont_wait)
 
         for x in cnrs:
             self.cnr_map[x['id']] = x
-
             if 'repository' in x:
                 normalized_url = git_utils.normalize_url(x['repository'])
                 self.repo_cnr_map[normalized_url] = x
@@ -727,7 +735,6 @@ class UnifiedManager:
         # default_channel = normalize_channel('default')
         # cache = self.custom_node_map_cache.get((default_channel, mode)) # CNR/nightly should always be based on the default channel.
 
-
         channel = normalize_channel(channel)
         cache = self.custom_node_map_cache.get((channel, mode)) # CNR/nightly should always be based on the default channel.
 
@@ -754,6 +761,8 @@ class UnifiedManager:
                     v['title'] = cnr['name']
                     v['description'] = cnr['description']
                     v['health'] = '-'
+                    if 'repository' in cnr:
+                        v['repository'] = cnr['repository']
                     added_cnr.add(cnr['id'])
                     node_id = v['id']
                 else:
@@ -829,7 +838,11 @@ class UnifiedManager:
 
         result = ManagedResult('fix')
 
-        info = self.active_nodes.get(node_id)
+        if version_spec == 'unknown':
+            info = self.unknown_active_nodes.get(node_id)
+        else:
+            info = self.active_nodes.get(node_id)
+
         if info is None or not os.path.exists(info[1]):
             return result.fail(f'not found: {node_id}@{version_spec}')
 
@@ -894,7 +907,7 @@ class UnifiedManager:
 
         archive_name = f"CNR_temp_{str(uuid.uuid4())}.zip"  # should be unpredictable name - security precaution
         download_path = os.path.join(get_default_custom_nodes_path(), archive_name)
-        manager_downloader.download_url(node_info.download_url, get_default_custom_nodes_path(), archive_name)
+        manager_downloader.basic_download_url(node_info.download_url, get_default_custom_nodes_path(), archive_name)
 
         # 2. extract files into <node_id>
         install_path = self.active_nodes[node_id][1]
@@ -1275,7 +1288,10 @@ class UnifiedManager:
                           "-----------------------------------------------------------------------------------------\n")
 
         commit_hash = repo.head.commit.hexsha
-        remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+        if f'{remote_name}/{branch_name}' in repo.refs:
+            remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+        else:
+            return result.fail(f"Not updatable branch: {branch_name}")
 
         if commit_hash != remote_commit_hash:
             git_pull(repo_path)
@@ -1339,7 +1355,7 @@ class UnifiedManager:
                 if version_spec == 'unknown':
                     repo_url = the_node['files'][0]
                 else:  # nightly
-                    repo_url = the_node['reference']
+                    repo_url = the_node['repository']
             else:
                 result = ManagedResult('install')
                 return result.fail(f"Node '{node_id}@{version_spec}' not found in [{channel}, {mode}]")
@@ -1870,7 +1886,10 @@ def git_repo_update_check_with(path, do_fetch=False, do_update=False, no_deps=Fa
                 current_branch = repo.active_branch
                 branch_name = current_branch.name
 
-            remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+            if f'{remote_name}/{branch_name}' in repo.refs:
+                remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+            else:
+                return False, False
 
             if commit_hash == remote_commit_hash:
                 repo.close()
@@ -2330,7 +2349,11 @@ def update_path(repo_path, instant_execution=False, no_deps=False):
                 return "fail"
 
     commit_hash = repo.head.commit.hexsha
-    remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+
+    if f'{remote_name}/{branch_name}' in repo.refs:
+        remote_commit_hash = repo.refs[f'{remote_name}/{branch_name}'].object.hexsha
+    else:
+        return "fail"
 
     if commit_hash != remote_commit_hash:
         git_pull(repo_path)
@@ -2474,8 +2497,21 @@ async def get_current_snapshot():
                         cnr_custom_nodes[info['id']] = info['ver']
                     else:
                         repo = git.Repo(fullpath)
+
+                        if repo.head.is_detached:
+                            remote_name = get_remote_name(repo)
+                        else:
+                            current_branch = repo.active_branch
+
+                            if current_branch.tracking_branch() is None:
+                                remote_name = get_remote_name(repo)
+                            else:
+                                remote_name = current_branch.tracking_branch().remote_name
+
                         commit_hash = repo.head.commit.hexsha
-                        url = repo.remotes.origin.url
+
+                        url = repo.remotes[remote_name].url
+
                         git_custom_nodes[url] = dict(hash=commit_hash, disabled=is_disabled)
                 except:
                     print(f"Failed to extract snapshots for the custom node '{path}'.")
@@ -2680,8 +2716,8 @@ def map_to_unified_keys(json_obj):
     return res
 
 
-async def get_unified_total_nodes(channel, mode):
-    await unified_manager.reload(mode)
+async def get_unified_total_nodes(channel, mode, regsitry_cache_mode='cache'):
+    await unified_manager.reload(regsitry_cache_mode)
 
     res = await unified_manager.get_custom_nodes(channel, mode)
 
@@ -2764,6 +2800,7 @@ async def get_unified_total_nodes(channel, mode):
             author = cnr['publisher']['name']
             title = cnr['name']
             reference = f"https://registry.comfy.org/nodes/{cnr['id']}"
+            repository = cnr.get('repository', '')
             install_type = "cnr"
             description = cnr.get('description', '')
 
@@ -2795,7 +2832,7 @@ async def get_unified_total_nodes(channel, mode):
             if ver is None:
                 ver = cnr['latest_version']['version']
 
-            item = dict(author=author, title=title, reference=reference, install_type=install_type,
+            item = dict(author=author, title=title, reference=reference, repository=repository, install_type=install_type,
                         description=description, state=state, updatable=updatable, version=ver)
 
             if active_version:

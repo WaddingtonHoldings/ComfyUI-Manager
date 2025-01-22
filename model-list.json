@@ -878,6 +878,62 @@
     },
 
     {
+      "name": "comfyanonymous/cosmos_cv8x8x8_1.0.safetensors",
+      "type": "VAE",
+      "base": "Cosmos-1.0",
+      "save_path": "default",
+      "description": "VAE model for Cosmos 1.0",
+      "reference": "https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/tree/main",
+      "filename": "cosmos_cv8x8x8_1.0.safetensors",
+      "url": "https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/resolve/main/vae/cosmos_cv8x8x8_1.0.safetensors",
+      "size": "211MB"
+    },
+    {
+      "name": "mcmonkey/Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+      "type": "diffusion_model",
+      "base": "Cosmos-1.0",
+      "save_path": "diffusion_models/cosmos-1.0",
+      "description": "Cosmos 1.0 Text2World Diffusion Model (7B)",
+      "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+      "filename": "Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+      "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+      "size": "14.5GB"
+    },
+    {
+      "name": "mcmonkey/Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
+      "type": "diffusion_model",
+      "base": "Cosmos-1.0",
+      "save_path": "diffusion_models/cosmos-1.0",
+      "description": "Cosmos 1.0 Video2World Diffusion Model (7B)",
+      "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+      "filename": "Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
+      "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
+      "size": "14.5GB"
+    },
+    {
+      "name": "mcmonkey/Cosmos-1_0-Diffusion-14B-Text2World.safetensors",
+      "type": "diffusion_model",
+      "base": "Cosmos-1.0",
+      "save_path": "diffusion_models/cosmos-1.0",
+      "description": "Cosmos 1.0 Text2World Diffusion Model (14B)",
+      "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+      "filename": "Cosmos-1_0-Diffusion-14B-Text2World.safetensors",
+      "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Text2World.safetensors",
+      "size": "28.5GB"
+    },
+    {
+      "name": "mcmonkey/Cosmos-1_0-Diffusion-14B-Video2World.safetensors",
+      "type": "diffusion_model",
+      "base": "Cosmos-1.0",
+      "save_path": "diffusion_models/cosmos-1.0",
+      "description": "Cosmos 1.0 Video2World Diffusion Model (14B)",
+      "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+      "filename": "Cosmos-1_0-Diffusion-14B-Video2World.safetensors",
+      "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Video2World.safetensors",
+      "size": "28.5GB"
+    },
+
+    {
       "name": "google-t5/t5-base",
       "type": "clip",
       "base": "t5-base",
@@ -2259,6 +2315,18 @@
       "url": "https://huggingface.co/CiaraRowles/TemporalDiff/resolve/main/temporaldiff-v1-animatediff.ckpt",
       "size": "1.67GB"
     },
+    {
+      "name": "Leoxing/pia.ckpt",
+      "type": "animatediff-pia",
+      "base": "SD1.x",
+      "save_path": "animatediff_models",
+      "description": "AnimateDiff-PIA Model",
+      "reference": "https://huggingface.co/Leoxing/PIA/tree/main",
+      "filename": "pia.ckpt",
+      "url": "https://huggingface.co/Leoxing/PIA/resolve/main/pia.ckpt",
+      "size": "1.67GB"
+    },
+
     {
       "name": "animatediff/v2_lora_PanLeft.ckpt (ComfyUI-AnimateDiff-Evolved) (Updated path)",
       "type": "motion lora",
@@ -4040,7 +4108,7 @@
       "name": "Comfy-Org/hunyuan_video_vae_bf16.safetensors",
       "type": "VAE",
       "base": "Hunyuan Video",
-      "save_path": "VAE",
+      "save_path": "default",
       "description": "Huyuan Video VAE model. repackaged version.",
       "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
       "filename": "hunyuan_video_vae_bf16.safetensors",

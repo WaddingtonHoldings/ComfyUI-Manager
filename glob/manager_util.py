@@ -11,6 +11,8 @@ from datetime import datetime
 import subprocess
 import sys
 import re
+import logging
+
 
 cache_lock = threading.Lock()
 
@@ -128,20 +130,56 @@ async def get_data(uri, silent=False):
     return json_obj
 
 
-async def get_data_with_cache(uri, silent=False, cache_mode=True):
+def get_cache_path(uri):
     cache_uri = str(simple_hash(uri)) + '_' + os.path.basename(uri).replace('&', "_").replace('?', "_").replace('=', "_")
-    cache_uri = os.path.join(cache_dir, cache_uri+'.json')
+    return os.path.join(cache_dir, cache_uri+'.json')
+
+
+def get_cache_state(uri):
+    cache_uri = get_cache_path(uri)
+
+    if not os.path.exists(cache_uri):
+        return "not-cached"
+    elif is_file_created_within_one_day(cache_uri):
+        return "cached"
+
+    return "expired"
+
+
+def save_to_cache(uri, json_obj, silent=False):
+    cache_uri = get_cache_path(uri)
+
+    with cache_lock:
+        with open(cache_uri, "w", encoding='utf-8') as file:
+            json.dump(json_obj, file, indent=4, sort_keys=True)
+            if not silent:
+                logging.info(f"[ComfyUI-Manager] default cache updated: {uri}")
+
+
+async def get_data_with_cache(uri, silent=False, cache_mode=True, dont_wait=False):
+    cache_uri = get_cache_path(uri)
+
+    if cache_mode and dont_wait:
+        # NOTE: return the cache if possible, even if it is expired, so do not cache
+        if not os.path.exists(cache_uri):
+            logging.error(f"[ComfyUI-Manager] The network connection is unstable, so it is operating in fallback mode: {uri}")
+
+            return {}
+        else:
+            if not is_file_created_within_one_day(cache_uri):
+                logging.error(f"[ComfyUI-Manager] The network connection is unstable, so it is operating in outdated cache mode: {uri}")
+
+            return await get_data(cache_uri, silent=silent)
 
     if cache_mode and is_file_created_within_one_day(cache_uri):
         json_obj = await get_data(cache_uri, silent=silent)
     else:
         json_obj = await get_data(uri, silent=silent)
-
         with cache_lock:
             with open(cache_uri, "w", encoding='utf-8') as file:
                 json.dump(json_obj, file, indent=4, sort_keys=True)
                 if not silent:
-                    print(f"[ComfyUI-Manager] default cache updated: {uri}")
+                    logging.info(f"[ComfyUI-Manager] default cache updated: {uri}")
 
     return json_obj
 
@@ -156,10 +194,10 @@ def extract_package_as_zip(file_path, extract_path):
         with zipfile.ZipFile(file_path, "r") as zip_ref:
             zip_ref.extractall(extract_path)
             extracted_files = zip_ref.namelist()
-        print(f"Extracted zip file to {extract_path}")
+        logging.info(f"Extracted zip file to {extract_path}")
         return extracted_files
     except zipfile.BadZipFile:
-        print(f"File '{file_path}' is not a zip or is corrupted.")
+        logging.error(f"File '{file_path}' is not a zip or is corrupted.")
         return None
 
 
@@ -183,7 +221,7 @@ def get_installed_packages(renew=False):
 
                     pip_map[y[0]] = y[1]
         except subprocess.CalledProcessError:
-            print("[ComfyUI-Manager] Failed to retrieve the information of installed pip packages.")
+            logging.error("[ComfyUI-Manager] Failed to retrieve the information of installed pip packages.")
             return set()
 
     return pip_map
@@ -223,7 +261,7 @@ class PIPFixer:
         else:
             cmd = [sys.executable, '-m', 'pip', 'install', '--force', 'torch', 'torchvision', 'torchaudio']
             subprocess.check_output(cmd, universal_newlines=True)
-            print(cmd)
+            logging.error(cmd)
             return
 
         torch_ver = StrictVersion(spec[0])
@@ -234,12 +272,12 @@ class PIPFixer:
             cmd = [sys.executable, '-m', 'pip', 'install', '--pre',
                    'torch', 'torchvision', 'torchaudio',
                    '--index-url', f"https://download.pytorch.org/whl/nightly/{platform}"]
-            print("[manager-core] restore PyTorch to nightly version")
+            logging.info("[ComfyUI-Manager] restore PyTorch to nightly version")
         else:
             cmd = [sys.executable, '-m', 'pip', 'install',
                    f'torch=={torch_ver}', f'torchvision=={torchvision_ver}', f"torchaudio=={torch_ver}",
                    '--index-url', f"https://download.pytorch.org/whl/{platform}"]
-            print(f"[manager-core] restore PyTorch to {torch_ver}+{platform}")
+            logging.info(f"[ComfyUI-Manager] restore PyTorch to {torch_ver}+{platform}")
 
         subprocess.check_output(cmd, universal_newlines=True)
 
@@ -252,20 +290,22 @@ class PIPFixer:
                 cmd = [sys.executable, '-m', 'pip', 'uninstall', 'comfy']
                 subprocess.check_output(cmd, universal_newlines=True)
 
-                print("[manager-core] 'comfy' python package is uninstalled.\nWARN: The 'comfy' package is completely unrelated to ComfyUI and should never be installed as it causes conflicts with ComfyUI.")
+                logging.warning("[ComfyUI-Manager] 'comfy' python package is uninstalled.\nWARN: The 'comfy' package is completely unrelated to ComfyUI and should never be installed as it causes conflicts with ComfyUI.")
         except Exception as e:
-            print("[manager-core] Failed to uninstall `comfy` python package")
-            print(e)
+            logging.error("[ComfyUI-Manager] Failed to uninstall `comfy` python package")
+            logging.error(e)
 
         # fix torch - reinstall torch packages if version is changed
         try:
-            if self.prev_pip_versions['torch'] != new_pip_versions['torch'] \
+            if 'torch' not in self.prev_pip_versions or 'torchvision' not in self.prev_pip_versions or 'torchaudio' not in self.prev_pip_versions:
+                logging.error("[ComfyUI-Manager] PyTorch is not installed")
+            elif self.prev_pip_versions['torch'] != new_pip_versions['torch'] \
                 or self.prev_pip_versions['torchvision'] != new_pip_versions['torchvision'] \
                 or self.prev_pip_versions['torchaudio'] != new_pip_versions['torchaudio']:
                     self.torch_rollback()
         except Exception as e:
-            print("[manager-core] Failed to restore PyTorch")
-            print(e)
+            logging.error("[ComfyUI-Manager] Failed to restore PyTorch")
+            logging.error(e)
 
         # fix opencv
         try:
@@ -296,10 +336,10 @@ class PIPFixer:
                         cmd = [sys.executable, '-m', 'pip', 'install', f"{x}=={versions[0].version_string}"]
                         subprocess.check_output(cmd, universal_newlines=True)
 
-                    print(f"[manager-core] 'opencv' dependencies were fixed: {targets}")
+                    logging.info(f"[ComfyUI-Manager] 'opencv' dependencies were fixed: {targets}")
         except Exception as e:
-            print("[manager-core] Failed to restore opencv")
-            print(e)
+            logging.error("[ComfyUI-Manager] Failed to restore opencv")
+            logging.error(e)
 
         # fix numpy
         try:
@@ -308,8 +348,8 @@ class PIPFixer:
                 if StrictVersion(np) >= StrictVersion('2'):
                     subprocess.check_output([sys.executable, '-m', 'pip', 'install', "numpy<2"], universal_newlines=True)
         except Exception as e:
-            print("[manager-core] Failed to restore numpy")
-            print(e)
+            logging.error("[ComfyUI-Manager] Failed to restore numpy")
+            logging.error(e)
 
 
 def sanitize(data):
