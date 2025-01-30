@@ -42,7 +42,7 @@ import manager_downloader
 from node_package import InstalledNodePackage
 
 
-version_code = [3, 9, 2]
+version_code = [3, 11]
 version_str = f"V{version_code[0]}.{version_code[1]}" + (f'.{version_code[2]}' if len(version_code) > 2 else '')
 
 
@@ -82,13 +82,18 @@ def get_comfyui_tag():
 
 
 def get_script_env():
-    copied = os.environ.copy()
+    new_env = os.environ.copy()
     git_exe = get_config().get('git_exe')
     if git_exe is not None:
-        copied['GIT_EXE_PATH'] = git_exe
-    copied['COMFYUI_PATH'] = comfy_path
+        new_env['GIT_EXE_PATH'] = git_exe
 
-    return copied
+    if 'COMFYUI_PATH' not in new_env:
+        new_env['COMFYUI_PATH'] = comfy_path
+
+    if 'COMFYUI_FOLDERS_BASE_PATH' not in new_env:
+        new_env['COMFYUI_FOLDERS_BASE_PATH'] = comfy_path
+
+    return new_env
 
 
 invalid_nodes = {}
@@ -113,7 +118,7 @@ def check_invalid_nodes():
             sys.path.append(comfy_path)
             import folder_paths
         except:
-            raise Exception(f"Invalid COMFYUI_PATH: {comfy_path}")
+            raise Exception(f"Invalid COMFYUI_FOLDERS_BASE_PATH: {comfy_path}")
 
     def check(root):
         global invalid_nodes
@@ -148,13 +153,19 @@ def check_invalid_nodes():
         print("\n---------------------------------------------------------------------------\n")
 
 
+# read env vars
 comfy_path = os.environ.get('COMFYUI_PATH')
+comfy_base_path = os.environ.get('COMFYUI_FOLDERS_BASE_PATH')
+
 if comfy_path is None:
     try:
         import folder_paths
         comfy_path = os.path.join(os.path.dirname(folder_paths.__file__))
     except:
         comfy_path = os.path.abspath(os.path.join(manager_util.comfyui_manager_path, '..', '..'))
+
+if comfy_base_path is None:
+    comfy_base_path = comfy_path
 
 
 channel_list_template_path = os.path.join(manager_util.comfyui_manager_path, 'channels.list.template')
@@ -1276,8 +1287,8 @@ class UnifiedManager:
             remote.fetch()
         except Exception as e:
             if 'detected dubious' in str(e):
-                print("[ComfyUI-Manager] Try fixing 'dubious repository' error on 'ComfyUI' repository")
-                safedir_path = comfy_path.replace('\\', '/')
+                print(f"[ComfyUI-Manager] Try fixing 'dubious repository' error on '{repo_path}' repository")
+                safedir_path = repo_path.replace('\\', '/')
                 subprocess.run(['git', 'config', '--global', '--add', 'safe.directory', safedir_path])
                 try:
                     remote.fetch()
@@ -1551,7 +1562,6 @@ def write_config():
         "file_logging": get_config()['file_logging'],
         'default_ui': get_config()['default_ui'],
         'component_policy': get_config()['component_policy'],
-        'double_click_policy': get_config()['double_click_policy'],
         'windows_selector_event_loop_policy': get_config()['windows_selector_event_loop_policy'],
         'model_download_by_agent': get_config()['model_download_by_agent'],
         'downgrade_blacklist': get_config()['downgrade_blacklist'],
@@ -1591,7 +1601,6 @@ def read_config():
                     'file_logging': default_conf['file_logging'].lower() == 'true' if 'file_logging' in default_conf else True,
                     'default_ui': default_conf['default_ui'] if 'default_ui' in default_conf else 'none',
                     'component_policy': default_conf['component_policy'] if 'component_policy' in default_conf else 'workflow',
-                    'double_click_policy': default_conf['double_click_policy'] if 'double_click_policy' in default_conf else 'copy-all',
                     'windows_selector_event_loop_policy': default_conf['windows_selector_event_loop_policy'].lower() == 'true' if 'windows_selector_event_loop_policy' in default_conf else False,
                     'model_download_by_agent': default_conf['model_download_by_agent'].lower() == 'true' if 'model_download_by_agent' in default_conf else False,
                     'downgrade_blacklist': default_conf['downgrade_blacklist'] if 'downgrade_blacklist' in default_conf else '',
@@ -1609,7 +1618,6 @@ def read_config():
             'file_logging': True,
             'default_ui': 'none',
             'component_policy': 'workflow',
-            'double_click_policy': 'copy-all',
             'windows_selector_event_loop_policy': False,
             'model_download_by_agent': False,
             'downgrade_blacklist': '',
@@ -2336,8 +2344,8 @@ def update_path(repo_path, instant_execution=False, no_deps=False):
         remote.fetch()
     except Exception as e:
         if 'detected dubious' in str(e):
-            print("[ComfyUI-Manager] Try fixing 'dubious repository' error on 'ComfyUI' repository")
-            safedir_path = comfy_path.replace('\\', '/')
+            print(f"[ComfyUI-Manager] Try fixing 'dubious repository' error on '{repo_path}' repository")
+            safedir_path = repo_path.replace('\\', '/')
             subprocess.run(['git', 'config', '--global', '--add', 'safe.directory', safedir_path])
             try:
                 remote.fetch()
