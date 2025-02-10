@@ -877,31 +877,6 @@ class ManagerMenuDialog extends ComfyDialog {
 						}
 				}),
 
-				
-				$el("button.cm-button", {
-					type: "button",
-					textContent: "Model Manager",
-					onclick:
-						() => {
-							if(!ModelManager.instance) {
-								ModelManager.instance = new ModelManager(app, self);
-							}
-							ModelManager.instance.show();
-						}
-				}),
-
-				$el("button.cm-button", {
-					type: "button",
-					textContent: "Install via Git URL",
-					onclick: async () => {
-						var url = await customPrompt("Please enter the URL of the Git repository to install", "");
-
-						if (url !== null) {
-							install_via_git_url(url, self);
-						}
-					}
-				}),
-
 				$el("br", {}, []),
 				update_all_button,
 				update_comfyui_button,
@@ -1079,18 +1054,6 @@ class ManagerMenuDialog extends ComfyDialog {
 								if(!SnapshotManager.instance)
 								SnapshotManager.instance = new SnapshotManager(app, self);
 								SnapshotManager.instance.show();
-							}
-					}),
-					$el("button.cm-experimental-button", {
-						type: "button",
-						textContent: "Install PIP packages",
-						onclick:
-							async () => {
-								var url = await customPrompt("Please enumerate the pip packages to be installed.\n\nExample: insightface opencv-python-headless>=4.1.1\n", "");
-
-								if (url !== null) {
-									install_pip(url, self);
-								}
 							}
 					}),
 					$el("button.cm-experimental-button", {
