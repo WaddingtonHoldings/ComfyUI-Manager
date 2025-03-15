@@ -29,6 +29,7 @@ from rich import print
 from packaging import version
 
 import uuid
+from git import GitCommandError
 
 glob_path = os.path.join(os.path.dirname(__file__))  # ComfyUI-Manager/glob
 sys.path.append(glob_path)
@@ -1962,8 +1963,7 @@ def is_valid_url(url):
             return True
     return False
 
-
-async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=False):
+async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=False, retries=3):
     await unified_manager.reload('cache')
     await unified_manager.get_custom_nodes('default', 'cache')
 
@@ -2004,16 +2004,25 @@ async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=
                     return result.fail(f"Already exists (disabled): '{disabled_repo_path2}'")
 
             print(f"CLONE into '{repo_path}'")
-
             # Clone the repository from the remote URL
             if not instant_execution and platform.system() == 'Windows':
                 res = manager_funcs.run_script([sys.executable, git_script_path, "--clone", get_default_custom_nodes_path(), url, repo_path], cwd=get_default_custom_nodes_path())
                 if res != 0:
                     return result.fail(f"Failed to clone '{url}' into  '{repo_path}'")
             else:
-                repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress())
-                repo.git.clear_cache()
-                repo.close()
+                retry_count = retries
+                while retry_count > 0:
+                    try:
+                        repo = git.Repo.clone_from(url, repo_path, recursive=True, progress=GitProgress(), depth=1)
+                        repo.git.clear_cache()
+                        repo.close()
+                        break
+                    except GitCommandError as e:
+                        retry_count -= 1
+                        if retry_count == 0:
+                            return result.fail(f"Failed to clone after {retries} attempts: {url} / {e}")
+                        print(f"Clone failed, retrying ({retry_count} attempts remaining)...")
+                        time.sleep(3)  # Wait 3 seconds before retrying
 
             execute_install_script(url, repo_path, instant_execution=instant_execution, no_deps=no_deps)
             print("Installation was successful.")
@@ -2023,7 +2032,6 @@ async def gitclone_install(url, instant_execution=False, msg_prefix='', no_deps=
         traceback.print_exc()
         print(f"Install(git-clone) error: {url} / {e}", file=sys.stderr)
         return result.fail(f"Install(git-clone) error: {url} / {e}")
-
 
 def git_pull(path):
     # Check if the path is a git repository
