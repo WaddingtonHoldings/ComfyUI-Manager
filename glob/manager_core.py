@@ -731,18 +731,14 @@ class UnifiedManager:
 
         json_obj = await get_data_by_mode(mode, 'custom-node-list.json', channel_url=channel_url)
         for x in json_obj['custom_nodes']:
-            try:
-                for y in x['files']:
-                    if 'github.com' in y and not (y.endswith('.py') or y.endswith('.js')):
-                        repo_name = y.split('/')[-1]
-                        res[repo_name] = (x, False)
+            for y in x['files']:
+                if 'github.com' in y and not (y.endswith('.py') or y.endswith('.js')):
+                    repo_name = y.split('/')[-1]
+                    res[repo_name] = (x, False)
 
-                if 'id' in x:
-                    if x['id'] not in res:
-                        res[x['id']] = (x, True)
-            except:
-                logging.error(f"[ComfyUI-Manager] broken item:{x}")
-
+            if 'id' in x:
+                if x['id'] not in res:
+                    res[x['id']] = (x, True)
 
         return res
 
